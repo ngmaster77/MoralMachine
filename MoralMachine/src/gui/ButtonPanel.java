@@ -32,8 +32,8 @@ public ButtonPanel() {
 	public void add_characteristics() { 
 	
 	this.setLayout(null); 
-	this.setSize(new Dimension(700,55)); 
-	this.setLocation(0,700);
+	this.setSize(new Dimension(600,100)); 
+	this.setLocation(0,600);
 	//this.setBorder(new LineBorder(new Color(208,168,10),3));
 	}
 	
@@ -45,8 +45,8 @@ public ButtonPanel() {
 	
 	public void add_Layout() { 
 		
-		button_start.setBounds(20,10,100,20); 
-		button_exit.setBounds(150,10,100,20); 
+		button_start.setBounds(20,30,100,20); 
+		button_exit.setBounds(150,30,100,20); 
 	}
 	
 	@Override

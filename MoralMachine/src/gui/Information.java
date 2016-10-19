@@ -27,8 +27,8 @@ public Information() {
 	public void add_characteristics() { 
 	
 	this.setLayout(null); 
-	this.setSize(new Dimension(300,1200)); 
-	this.setLocation(700,0);
+	this.setSize(new Dimension(100,800)); 
+	this.setLocation(600,0);
 	//this.setBorder(new LineBorder(new Color(208,168,10),3));
 	}
 	

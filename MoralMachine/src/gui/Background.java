@@ -42,7 +42,7 @@ public class Background extends JPanel {
 	@Override
 	public void paint(Graphics g) { 
 		
-		g.drawImage(new ImageIcon("res/images/carretera-1.jpg").getImage(),0,0,1200,1200,this); 
+		g.drawImage(new ImageIcon("res/images/carretera-1.jpg").getImage(),0,0,700,700,this); 
 		this.setOpaque(false); 
 		super.paint(g); 
 	}

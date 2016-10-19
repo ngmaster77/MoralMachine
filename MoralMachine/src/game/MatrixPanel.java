@@ -23,7 +23,7 @@ public class MatrixPanel extends JPanel {
 	
 	public void add_characteristics() { 
 		
-		this.setSize(new Dimension(700,700)); 
+		this.setSize(new Dimension(600,600)); 
 	}
 
 	@Override 

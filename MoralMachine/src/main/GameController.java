@@ -45,7 +45,8 @@ public GameController() {
 		
 		this.setLayout(null); 
 		this.setTitle("Moral Machine"); 
-		this.setSize(new Dimension(900,1200)); 
+		this.setSize(new Dimension(700,700)); 
+		this.setResizable(false);
 		this.setLocationRelativeTo(null); 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 
