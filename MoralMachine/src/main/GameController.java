@@ -119,8 +119,8 @@ public void addActionListener() {
 		if(e.getSource() == botonpanel.getreset_path()) {
 			checkbox_path_checked = false;
 			//matrixpanel.getGame_board().reset_path();
-			//matrixpanel.getGame_board().set_value(minimum_path.getOrigin_x(),minimum_path.getOrigin_y(),80);
-			//matrixpanel.getGame_board().set_value(minimum_path.getDestiny_x(),minimum_path.getDestiny_y(),100);
+			//matrixpanel.getGame_board().setValue(minimum_path.getOrigin_x(),minimum_path.getOrigin_y(),80);
+			//matrixpanel.getGame_board().setValue(minimum_path.getDestiny_x(),minimum_path.getDestiny_y(),100);
 			matrixpanel.repaint();
 		}
 		
@@ -150,16 +150,16 @@ public void addActionListener() {
 		
 		if((this.getButton_selection() == 1) && 
 		   (this.car_selected == false) &&
-		   (matrixpanel.getGame_board().get_value(position_y, position_x) > 3) &&
-		   (matrixpanel.getGame_board().get_value(position_y, position_x) < 80)) { 
-			matrixpanel.getGame_board().set_value(position_y,position_x,80); 
+		   (matrixpanel.getGame_board().getValue(position_y, position_x) > 3) &&
+		   (matrixpanel.getGame_board().getValue(position_y, position_x) < 80)) { 
+			matrixpanel.getGame_board().setValue(position_y,position_x,80); 
 			this.car_selected = true;
 		}
 		if((this.getButton_selection() == 2) && 
 		   (this.car_selected == false) &&
-		   (matrixpanel.getGame_board().get_value(position_y, position_x) > 3) &&
-		   (matrixpanel.getGame_board().get_value(position_y, position_x) < 80)) { 
-			matrixpanel.getGame_board().set_value(position_y,position_x,100); 
+		   (matrixpanel.getGame_board().getValue(position_y, position_x) > 3) &&
+		   (matrixpanel.getGame_board().getValue(position_y, position_x) < 80)) { 
+			matrixpanel.getGame_board().setValue(position_y,position_x,100); 
 			this.finish_selected = true; 
 		}
 		matrixpanel.repaint(); // Nueva llamada al método paint.

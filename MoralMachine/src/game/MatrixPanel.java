@@ -37,8 +37,8 @@ public class MatrixPanel extends JPanel {
 	public void paint(Graphics g) { 
 		
 		
-		final int IMAGESIZE = Math.min(this.getWidth(), this.getHeight()) / game_board.get_columns();
-		final int IMAGESIZE2 = Math.min(this.getWidth(), this.getHeight()) / game_board.get_rows();
+		final int IMAGESIZE = Math.min(this.getWidth(), this.getHeight()) / game_board.getN();
+		final int IMAGESIZE2 = Math.min(this.getWidth(), this.getHeight()) / game_board.getM();
 		/**
 		final int IMAGESIZE = Math.min(this.getWidth(), this.getHeight()) / game_board.get_columns();
 		for (int i = 0; i < game_board.get_rows(); i++)  {
@@ -57,15 +57,15 @@ public class MatrixPanel extends JPanel {
 		g.drawImage(new ImageIcon("res/images/fondo.jpg").getImage(),0,0,700,700,this);
 		
 		
-		for (int i = 0; i < game_board.get_rows(); i++)  {
+		for (int i = 0; i < game_board.getM(); i++)  {
 			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),0 * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
-			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),(game_board.get_columns()-1) * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),(game_board.getN()-1) * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 			
 		}
 		
 		
 		
-		for (int j = 0; j < game_board.get_columns(); j++) {
+		for (int j = 0; j < game_board.getN(); j++) {
 			
 			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),j * IMAGESIZE, 0 * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),j * IMAGESIZE, (rows-1)  * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);

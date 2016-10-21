@@ -1,45 +1,50 @@
 package game;
 
-public class Coche {
+public class Coche
+{
+	private int xC;
+	private int yC;
 	
-	private int x;
-	private int y;
-	private int pasajeros;
-	
-	public Coche(){
-		this.x = 0;
-		this.y = 0;
-		pasajeros = 0;
+	public Coche()
+	{
+		this.xC = 0;
+		this.yC = 0;
 	}
-	
-	public Coche(int x,int y,int pasajeros){
-		this.x = x;
-		this.y = y;
-		this.pasajeros = pasajeros;
+	public Coche(int x, int y)
+	{
+		this.xC = x;
+		this.yC = y;
 	}
-	
-	public int get_x(){
-		return this.x;
+	public int getxC()
+	{
+		return xC;
 	}
-	
-	public int get_y(){
-		return this.y;
+	public int getyC()
+	{
+		return yC;
 	}
-	
-	public int get_pasajeros(){
-		return this.pasajeros;
+	public void setxC(int x)
+	{
+		this.xC = x;
 	}
-	
-	public void set_x(int x){
-		this.x = x;
+	public void setyC(int y)
+	{
+		this.yC = y;
 	}
-	
-	public void set_y(int y){
-		this.y = y;
+	public void moveForward()
+	{
+		setxC(getxC()-1);
 	}
-	
-	public void set_pasajeros(int pasajeros){
-		this.pasajeros = pasajeros;
+	public void moveBack()
+	{
+		setxC(getxC()+1);
 	}
-	
+	public void moveRight()
+	{
+		setyC(getyC()+1);
+	}
+	public void moveLeft()
+	{
+		setyC(getyC()-1);
+	}
 }

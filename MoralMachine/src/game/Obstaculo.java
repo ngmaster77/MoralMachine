@@ -1,6 +1,6 @@
 package game;
 
-public abstract class Obstaculo {
+public class Obstaculo {
 
 	private int x;
 	private int y;
@@ -30,9 +30,8 @@ public abstract class Obstaculo {
 	public void set_y(int y){
 		this.y = y;
 	}
-	
-	public abstract void get_info();
-	
-	
-	
+	public void printInfo()
+	{
+		System.out.println("x:" + get_x() + " y: " + get_y());
+	}
 }
