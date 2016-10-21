@@ -34,4 +34,5 @@ public abstract class Obstaculo {
 	public abstract void get_info();
 	
 	
+	
 }

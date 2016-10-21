@@ -1,6 +1,7 @@
 package main;
 
 import gui.Background; 
+import gui.Board;
 import game.MatrixPanel;
 import gui.ButtonPanel;
 import gui.Information;
@@ -10,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.*;
+import java.lang.*;
 
 
 public class GameController extends JFrame implements ActionListener, MouseListener 
@@ -71,9 +73,19 @@ public GameController() {
 	
 	private void initialize_matrix_panel() { 
 		
-		int scale = (int) (((backgroundstartpanel.getStartpanel().getSize_matrix_box().getSelectedIndex()) + 1) * 10); 
+		//int scale = (int) (((backgroundstartpanel.getStartpanel().getSize_matrix_box().getSelectedIndex()) + 1) * 10); 
 
-		matrixpanel = new MatrixPanel(mainpanel.getWidth(), scale); 
+		
+		int a = 10;
+		int b = 10;
+		
+		String columnas = backgroundstartpanel.getStartpanel().getColumnas().getText();
+		String filas = backgroundstartpanel.getStartpanel().getFilas().getText();
+		
+		//a = Integer.parseInt(columnas);
+		//filas2 = Integer.parseInt(filas);
+		
+		matrixpanel = new MatrixPanel(a,b); 
 		this.add(matrixpanel); 
 	}
 	

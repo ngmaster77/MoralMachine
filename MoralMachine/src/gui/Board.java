@@ -1,14 +1,7 @@
 package gui;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Graphics;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import java.awt.*;
+import javax.swing.*;
 import javax.swing.border.LineBorder;
 
 public class Board extends JPanel { 
@@ -18,8 +11,9 @@ public class Board extends JPanel {
 	private Dimension dimension_backgroundpanel;
 	private JButton button_start;
 	private JLabel size_matrix_label;
-	private String[] sizes = {"10x10", "20x20","30x30","40x40","50x50","60x60","70x70","80x80"};
-	private JComboBox<String> size_matrix_box;
+	private JTextField columnas;
+	private JTextField filas;
+	private JTextField dificultad;
 	private JButton button_exit;	
 	
 
@@ -30,13 +24,20 @@ public class Board extends JPanel {
 		
 		dimension_backgroundpanel = size_backgroundpanel;
 		button_start = new JButton(); 
-		 button_start.setIcon(new ImageIcon("res/images/BOTON_COMENZAR72.png"));
+		button_start.setIcon(new ImageIcon("res/images/BOTON_COMENZAR72.png"));
 		size_matrix_label = new JLabel();
 		size_matrix_label.setIcon(new ImageIcon("res/images/BOTON_MAPA72.png"));
-		size_matrix_box = new JComboBox<String>(sizes);
 		button_exit = new JButton();
-		 button_exit.setIcon(new ImageIcon("res/images/BOTON_SALIR72.png"));
-		
+		button_exit.setIcon(new ImageIcon("res/images/BOTON_SALIR72.png"));
+		columnas = new JTextField();
+		columnas.setEnabled(true);
+		columnas.setBackground(Color.GRAY);
+		filas = new JTextField();
+		filas.setEnabled(true);
+		filas.setBackground(Color.GRAY);
+		dificultad = new JTextField();
+		dificultad.setEnabled(true);
+		dificultad.setBackground(Color.GRAY);
 		this.add_characteristics();
 		this.add_components();
 		this.edit_font();
@@ -57,24 +58,26 @@ public class Board extends JPanel {
 		
 		this.add(button_start);
 		this.add(size_matrix_label); 
-		this.add(size_matrix_box); 
+		this.add(columnas); 
+		this.add(filas);
 		this.add(button_exit); 
+		this.add(dificultad);
 	}
 	
 	public void edit_font() { 
 		
 		size_matrix_label.setFont(new Font("Impact",Font.PLAIN,16));
 		size_matrix_label.setForeground(Color.black);
-		size_matrix_box.setFont(new Font("Impact",Font.PLAIN,14));
-		size_matrix_box.setForeground(Color.black);
 	}
 	
 	public void add_Layout() { 
 		
 		button_start.setBounds(150,185,290,35); 
-		size_matrix_label.setBounds(480,205,150,50);
-		size_matrix_box.setBounds(450,250,125,20); 
+		size_matrix_label.setBounds(480,190,150,50);
+		columnas.setBounds(485,240,50,20);
+		filas.setBounds(485,260,50,20);
 		button_exit.setBounds(150,235,290,35); 
+		dificultad.setBounds(50,240,50,20);
 	}
 	
 	
@@ -105,14 +108,18 @@ public class Board extends JPanel {
 		this.button_exit = button_exit;
 	}
 
-
-	public JComboBox<String> getSize_matrix_box() {
-		return size_matrix_box;
+	public JTextField getColumnas() {
+		
+		return columnas;
 	}
-
-	public void setSize_matrix_box(JComboBox<String> size_matrix_box) {
-		this.size_matrix_box = size_matrix_box;
-	}
-
 	
+	public JTextField getFilas() {
+		
+		return filas;
+	}
+	
+	public JTextField getDificultad() {
+		
+		return dificultad;
+	}
 }

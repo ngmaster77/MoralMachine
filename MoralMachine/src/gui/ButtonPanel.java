@@ -44,7 +44,7 @@ public ButtonPanel() {
 	this.setLayout(null); 
 	this.setSize(new Dimension(600,100)); 
 	this.setLocation(0,600);
-	//this.setBorder(new LineBorder(new Color(208,168,10),3));
+	this.setBackground(new Color(196,196,196));
 	}
 	
 	public void add_components() { 
@@ -67,18 +67,12 @@ public ButtonPanel() {
 	
 public void edit_components() { 
 		
-		car.setIcon(new ImageIcon("res/images/coche-verde.png"));
-		finish.setIcon(new ImageIcon("res/images/carrera.gif"));
+		car.setIcon(new ImageIcon("res/images/car-green.png"));
+		finish.setIcon(new ImageIcon("res/images/bandera.gif"));
 		
 	}
 	
-	@Override
-	public void paint(Graphics g) { 
-		
-		g.drawImage(new ImageIcon("res/images/boton.png").getImage(),0,0,this.getWidth(),this.getHeight(),null); 
-		this.setOpaque(false); 
-		super.paint(g); 
-	}
+	
 	
 	public JButton getcar() {
 		return car;

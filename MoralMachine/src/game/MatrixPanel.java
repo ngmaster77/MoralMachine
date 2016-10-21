@@ -11,14 +11,21 @@ public class MatrixPanel extends JPanel {
 	
 	private Matrix game_board;
 	private int scale_game;
+	private int rows;
+	private int dificultad_;
+
 	
 	public MatrixPanel(int mainpanel_size, int scale){
 		
 		
-		game_board = new Matrix(scale,scale); 
-		scale_game = (int) mainpanel_size / scale;
+		rows = scale ;
+		game_board = new Matrix(mainpanel_size,scale); 
+		scale_game = (int) mainpanel_size *	 scale;
+		
 		add_characteristics(); 
-		System.out.println(game_board.get_columns());
+		//System.out.println(game_board.get_columns());
+		//System.out.println(game_board.get_rows());
+		System.out.println(rows);
 	}
 	
 	public void add_characteristics() { 
@@ -29,6 +36,9 @@ public class MatrixPanel extends JPanel {
 	@Override 
 	public void paint(Graphics g) { 
 		
+		
+		final int IMAGESIZE = Math.min(this.getWidth(), this.getHeight()) / game_board.get_columns();
+		final int IMAGESIZE2 = Math.min(this.getWidth(), this.getHeight()) / game_board.get_rows();
 		/**
 		final int IMAGESIZE = Math.min(this.getWidth(), this.getHeight()) / game_board.get_columns();
 		for (int i = 0; i < game_board.get_rows(); i++)  {
@@ -41,10 +51,28 @@ public class MatrixPanel extends JPanel {
 				  }
 			}
 			
-			
+				
 		}
 		**/
 		g.drawImage(new ImageIcon("res/images/fondo.jpg").getImage(),0,0,700,700,this);
+		
+		
+		for (int i = 0; i < game_board.get_rows(); i++)  {
+			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),0 * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),(game_board.get_columns()-1) * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+			
+		}
+		
+		
+		
+		for (int j = 0; j < game_board.get_columns(); j++) {
+			
+			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),j * IMAGESIZE, 0 * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),j * IMAGESIZE, (rows-1)  * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+
+		}
+		
+		
 		this.setOpaque(false);
 		super.paintComponent(g);
 	}
