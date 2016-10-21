@@ -73,19 +73,11 @@ public GameController() {
 	
 	private void initialize_matrix_panel() { 
 		
-		//int scale = (int) (((backgroundstartpanel.getStartpanel().getSize_matrix_box().getSelectedIndex()) + 1) * 10); 
-
+		int a = Integer.parseInt(backgroundstartpanel.getStartpanel().getColumnas().getText());
+		int b = Integer.parseInt(backgroundstartpanel.getStartpanel().getFilas().getText());
+		int c =  Integer.parseInt(backgroundstartpanel.getStartpanel().getDificultad().getText());
 		
-		int a = 10;
-		int b = 10;
-		
-		String columnas = backgroundstartpanel.getStartpanel().getColumnas().getText();
-		String filas = backgroundstartpanel.getStartpanel().getFilas().getText();
-		
-		//a = Integer.parseInt(columnas);
-		//filas2 = Integer.parseInt(filas);
-		
-		matrixpanel = new MatrixPanel(a,b); 
+		matrixpanel = new MatrixPanel(a,b,c); 
 		this.add(matrixpanel); 
 	}
 	

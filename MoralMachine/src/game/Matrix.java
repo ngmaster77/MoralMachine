@@ -25,18 +25,21 @@ public class Matrix
 		setCarPos();
 	}
 	
-	public Matrix(int m,int n)
+	public Matrix(int m,int n,double dificultad)
 	{
 		this.m = m;
 		this.n = n;
-		this.obstaculos = 0;
+		this.obstaculos = (m*n*(dificultad/100));
 		this.matrix = new int[m*n];
-		this.car = new Coche();
-		this.conos = new Obstaculo[(int) obstaculos];
+		this.car = null;
+		int aux = (int)getObs();
+		this.conos = new Obstaculo[aux];
+		createConos();
 		fillMatrix(0);
-		setBorde();
+		setBorde();		
 		setObstaculos();
-		setCarPos();
+		//setCarPos();
+
 	}
 	
 	public Matrix(int n, int m, double obstaculos, int xc, int yc)

@@ -1,4 +1,4 @@
-/*package main;
+package main;
 
 public class Main {
 
@@ -8,8 +8,8 @@ public class Main {
 		GameController game = new GameController();
 	}
 
-}*/
-
+}
+/*
 package main;
 
 import game.Matrix;
@@ -34,9 +34,9 @@ public class Main
 		}*/
 		
 		//Matrix map = new Matrix(finput[0],finput[1],finput[2],finput[3]-1,finput[4]-1);
-		Matrix map = new Matrix(30,30,20,1,1);
+	/*	Matrix map = new Matrix(30,30,20,1,1);
 		map.printMatrix();
 		map.moveCar(3);
 		map.printMatrix();
 	}
-}
+}*/

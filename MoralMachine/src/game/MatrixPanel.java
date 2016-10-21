@@ -12,14 +12,14 @@ public class MatrixPanel extends JPanel {
 	private Matrix game_board;
 	private int scale_game;
 	private int rows;
-	private int dificultad_;
+	private double dificultad_;
 
 	
-	public MatrixPanel(int mainpanel_size, int scale){
+	public MatrixPanel(int mainpanel_size, int scale,int dificultad){
 		
-		
+		dificultad_ = dificultad;
 		rows = scale ;
-		game_board = new Matrix(mainpanel_size,scale); 
+		game_board = new Matrix(mainpanel_size,scale,dificultad_); 
 		scale_game = (int) mainpanel_size *	 scale;
 		
 		add_characteristics(); 
@@ -58,20 +58,24 @@ public class MatrixPanel extends JPanel {
 		
 		
 		for (int i = 0; i < game_board.getM(); i++)  {
-			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),0 * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
-			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),(game_board.getN()-1) * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
-			
-		}
-		
-		
-		
-		for (int j = 0; j < game_board.getN(); j++) {
-			
-			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),j * IMAGESIZE, 0 * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
-			g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),j * IMAGESIZE, (rows-1)  * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
-
-		}
-		
+			for (int j = 0; j < game_board.getN(); j++) 
+			{
+				
+				if ( game_board.getValue(i, j) == 2)
+				{
+					g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				
+				if ( game_board.getValue(i, j) == 3)
+				{
+					g.drawImage(new ImageIcon("res/images/coni.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+					
+				}
+				
+					
+					
+				}
+			}
 		
 		this.setOpaque(false);
 		super.paintComponent(g);
