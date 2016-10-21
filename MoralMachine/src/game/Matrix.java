@@ -31,14 +31,14 @@ public class Matrix
 		this.n = n;
 		this.obstaculos = (m*n*(dificultad/100));
 		this.matrix = new int[m*n];
-		this.car = null;
+		this.car = new Coche(1,1);
 		int aux = (int)getObs();
 		this.conos = new Obstaculo[aux];
 		createConos();
 		fillMatrix(0);
 		setBorde();		
 		setObstaculos();
-		//setCarPos();
+		setCarPos();
 
 	}
 	

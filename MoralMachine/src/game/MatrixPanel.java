@@ -72,6 +72,12 @@ public class MatrixPanel extends JPanel {
 					
 				}
 				
+				if ( game_board.getValue(i, j) == 1)
+				{
+					g.drawImage(new ImageIcon("res/images/car-green.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+					
+				}
+				
 					
 					
 				}

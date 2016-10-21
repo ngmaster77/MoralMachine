@@ -73,9 +73,13 @@ public GameController() {
 	
 	private void initialize_matrix_panel() { 
 		
-		int a = Integer.parseInt(backgroundstartpanel.getStartpanel().getColumnas().getText());
-		int b = Integer.parseInt(backgroundstartpanel.getStartpanel().getFilas().getText());
-		int c =  Integer.parseInt(backgroundstartpanel.getStartpanel().getDificultad().getText());
+		//int a = Integer.parseInt(backgroundstartpanel.getStartpanel().getColumnas().getText());
+		//int b = Integer.parseInt(backgroundstartpanel.getStartpanel().getFilas().getText());
+		//int c =  Integer.parseInt(backgroundstartpanel.getStartpanel().getDificultad().getText());
+		
+		int a = 10;
+		int b = 10;
+		int c = 10;
 		
 		matrixpanel = new MatrixPanel(a,b,c); 
 		this.add(matrixpanel); 
