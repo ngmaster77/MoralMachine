@@ -11,6 +11,7 @@ public class Matrix
 	private Coche car;
 	private Obstaculo conos[];
 	private Persona pasajeros[];
+	private Meta fin;
 	private Random rnd;
 	
 	public Matrix()
@@ -36,6 +37,7 @@ public class Matrix
 		this.obstaculos = (m*n*(dificultad/100));
 		this.matrix = new int[m*n];
 		this.car = new Coche(1,1);
+		this.fin = new Meta(1,2);
 		createObstaculos();
 		createPasajeros();
 		createConos();
@@ -43,6 +45,7 @@ public class Matrix
 		setBorde();		
 		setObstaculos();
 		setCarPos();
+		setMetaPos();
 		setPasajeros();
 
 	}
@@ -54,6 +57,7 @@ public class Matrix
 		this.obstaculos = (m*n*(obstaculos/100));
 		this.matrix = new int[m*n];
 		this.car = new Coche(xc, yc);
+		this.fin = new Meta(1,2);
 		createObstaculos();
 		createPasajeros();
 		createConos();
@@ -61,6 +65,7 @@ public class Matrix
 		setBorde();		
 		setObstaculos();
 		setCarPos();
+		setMetaPos();
 		setPasajeros();
 	}
 	
@@ -138,7 +143,14 @@ public class Matrix
 	
 	public void setCarPos()
 	{
+		
 		this.matrix[pos(car.getxC(),car.getyC())] = 1;
+	}
+	
+	public void setMetaPos()
+	{
+		System.out.println(fin.getX() +"," +fin.getY());
+		this.matrix[pos(fin.getX(),fin.getY())] = 6;
 	}
 	
 	public void moveCar(int m)
@@ -179,7 +191,8 @@ public class Matrix
 			rnd = new Random();
 			
 			conos[i].set_x(rnd.nextInt((getN()-2) - 1 + 1) + 1);
-			conos[i].set_y(rnd.nextInt((getM()-2) - 1 + 1) + 1);	
+			conos[i].set_y(rnd.nextInt((getM()-2) - 1 + 1) + 1);
+			
 		}
 		printObstaculos();
 	}
@@ -259,4 +272,5 @@ public class Matrix
 		this.conos = new Obstaculo[setenta];
 		this.pasajeros = new Persona[treinta];
 	}
+	
 }

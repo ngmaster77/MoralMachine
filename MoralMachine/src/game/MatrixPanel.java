@@ -134,6 +134,11 @@ public class MatrixPanel extends JPanel {
 				{
 					g.drawImage(new ImageIcon("res/images/Personajes/chica.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
+				if ( game_board.getValue(i, j) == 6)
+				{
+					System.out.println("hola");
+					g.drawImage(new ImageIcon("res/images/Carretera/meta.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
 			}
 		}
 	}
@@ -165,6 +170,11 @@ public class MatrixPanel extends JPanel {
 				if ( game_board.getValue(i, j) == 5)
 				{
 					g.drawImage(new ImageIcon("res/images/Personajes/mchica.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 6)
+				{
+					System.out.println("hola");
+					g.drawImage(new ImageIcon("res/images/Carretera/mmeta.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
 			}
 		}
