@@ -60,32 +60,28 @@ public class MatrixPanel extends JPanel {
 		for (int i = 0; i < game_board.getM(); i++)  {
 			for (int j = 0; j < game_board.getN(); j++) 
 			{
-				
 				if ( game_board.getValue(i, j) == 2)
 				{
 					g.drawImage(new ImageIcon("res/images/2cdwbuo.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
-				
 				if ( game_board.getValue(i, j) == 3)
 				{
-					g.drawImage(new ImageIcon("res/images/coni.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
-					
+					g.drawImage(new ImageIcon("res/images/coni.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);	
 				}
-				
 				if ( game_board.getValue(i, j) == 1)
 				{
 					g.drawImage(new ImageIcon("res/images/car-green.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
-				
 				if ( game_board.getValue(i, j) == 4)
 				{
-					g.drawImage(new ImageIcon("res/images/karmele.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+					g.drawImage(new ImageIcon("res/images/Personajes/chico.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
-				
-					
-					
+				if ( game_board.getValue(i, j) == 5)
+				{
+					g.drawImage(new ImageIcon("res/images/Personajes/chica.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
 			}
+		}
 		
 		this.setOpaque(false);
 		super.paintComponent(g);

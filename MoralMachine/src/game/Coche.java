@@ -10,12 +10,14 @@ public class Coche
 	{
 		this.xC = 0;
 		this.yC = 0;
+		this.nPasajeros = 0;
 	}
 	
 	public Coche(int x, int y)
 	{
 		this.xC = x;
 		this.yC = y;
+		this.nPasajeros = 0;
 	}
 	
 	public int getxC()
@@ -47,7 +49,10 @@ public class Coche
 	{
 		this.nPasajeros = nPasajeros;
 	}
-	
+	public void addPasajeros()
+	{
+		this.nPasajeros++;
+	}
 	public void moveForward()
 	{
 		setxC(getxC()-1);

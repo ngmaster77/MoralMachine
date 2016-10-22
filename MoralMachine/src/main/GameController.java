@@ -77,9 +77,9 @@ public GameController() {
 		//int b = Integer.parseInt(backgroundstartpanel.getStartpanel().getFilas().getText());
 		//int c =  Integer.parseInt(backgroundstartpanel.getStartpanel().getDificultad().getText());
 		
-		int a = 10;
-		int b = 10;
-		int c = 10;
+		int a = 50;
+		int b = 50;
+		int c = 25;
 		
 		matrixpanel = new MatrixPanel(a,b,c); 
 		this.add(matrixpanel); 

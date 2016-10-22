@@ -11,6 +11,7 @@ public class Matrix
 	private Coche car;
 	private Obstaculo conos[];
 	private Persona pasajeros[];
+	private Random rnd;
 	
 	public Matrix()
 	{
@@ -19,9 +20,8 @@ public class Matrix
 		this.obstaculos = 0;
 		this.matrix = null;
 		this.car = new Coche();
-		this.conos = new Obstaculo[(int) obstaculos];
+		this.conos = new Obstaculo[(int)getObs()];
 		this.pasajeros = null;
-		createPasajeros();
 		fillMatrix(0);
 		setBorde();
 		setObstaculos();
@@ -36,9 +36,7 @@ public class Matrix
 		this.obstaculos = (m*n*(dificultad/100));
 		this.matrix = new int[m*n];
 		this.car = new Coche(1,1);
-		int aux = (int)getObs();
-		this.conos = new Obstaculo[aux];
-		this.pasajeros = new Persona[1];
+		createObstaculos();
 		createPasajeros();
 		createConos();
 		fillMatrix(0);
@@ -56,9 +54,7 @@ public class Matrix
 		this.obstaculos = (m*n*(obstaculos/100));
 		this.matrix = new int[m*n];
 		this.car = new Coche(xc, yc);
-		int aux = (int)getObs();
-		this.conos = new Obstaculo[aux];
-		this.pasajeros = new Persona[1];
+		createObstaculos();
 		createPasajeros();
 		createConos();
 		fillMatrix(0);
@@ -180,7 +176,7 @@ public class Matrix
 	{		
 		for(int i = 0; i < conos.length; i++)
 		{
-			Random rnd = new Random();
+			rnd = new Random();
 			
 			conos[i].set_x(rnd.nextInt((getN()-2) - 1 + 1) + 1);
 			conos[i].set_y(rnd.nextInt((getM()-2) - 1 + 1) + 1);	
@@ -211,7 +207,20 @@ public class Matrix
 	{
 		for(int i = 0; i < pasajeros.length; i++)
 		{
-			Persona pasajero = new Persona();
+			rnd = new Random();
+			boolean random = rnd.nextBoolean();
+			Persona pasajero;
+			
+			if(random == true)
+			{
+				pasajero = new Persona(4);
+				System.out.println("Creando una chico");
+			}
+			else
+			{
+				pasajero = new Persona(5);
+				System.out.println("Creando una chica");
+			}
 			pasajeros[i] = pasajero;
 		}
 	}
@@ -236,7 +245,18 @@ public class Matrix
 			int x = pasajeros[i].getY();
 			int y = pasajeros[i].getX();
 			System.out.println(x + "," + y);
-			matrix[pos(x,y)] = 4;
+			if(pasajeros[i].getId() == 4)
+				matrix[pos(x,y)] = 4;
+			else
+				matrix[pos(x,y)] = 5;
 		}
+	}
+	public void createObstaculos()
+	{
+		int setenta = (int)(getObs()*0.7);
+		int treinta = (int)getObs() - setenta;
+		
+		this.conos = new Obstaculo[setenta];
+		this.pasajeros = new Persona[treinta];
 	}
 }
