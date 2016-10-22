@@ -10,6 +10,7 @@ public class Matrix
 	private int matrix[];
 	private Coche car;
 	private Obstaculo conos[];
+	private Persona pasajeros[];
 	
 	public Matrix()
 	{
@@ -19,10 +20,13 @@ public class Matrix
 		this.matrix = null;
 		this.car = new Coche();
 		this.conos = new Obstaculo[(int) obstaculos];
+		this.pasajeros = null;
+		createPasajeros();
 		fillMatrix(0);
 		setBorde();
 		setObstaculos();
 		setCarPos();
+		setPasajeros();
 	}
 	
 	public Matrix(int m,int n,double dificultad)
@@ -34,11 +38,14 @@ public class Matrix
 		this.car = new Coche(1,1);
 		int aux = (int)getObs();
 		this.conos = new Obstaculo[aux];
+		this.pasajeros = new Persona[1];
+		createPasajeros();
 		createConos();
 		fillMatrix(0);
 		setBorde();		
 		setObstaculos();
 		setCarPos();
+		setPasajeros();
 
 	}
 	
@@ -51,44 +58,56 @@ public class Matrix
 		this.car = new Coche(xc, yc);
 		int aux = (int)getObs();
 		this.conos = new Obstaculo[aux];
+		this.pasajeros = new Persona[1];
+		createPasajeros();
 		createConos();
 		fillMatrix(0);
 		setBorde();		
 		setObstaculos();
 		setCarPos();
+		setPasajeros();
 	}
+	
 	public int getM()
 	{
 		return m;
 	}
+	
 	public int getN()
 	{
 		return n;
 	}
+	
 	public double getObs()
 	{
 		return obstaculos;
 	}
+	
 	public int getValue(int row, int column)
 	{ 
 		return matrix[pos(row,column)];
 	}
+	
 	public void setM(int m)
 	{
 		this.m = m;
 	}
+	
 	public void setN(int n)
 	{
 		this.n = n;
 	}
+	
 	public void setValue(int row, int column,int element)
 	{ 
 		matrix[pos(row,column)] = element;
 	}
+	
 	public void setObs(int o)
 	{
 		this.obstaculos = (getM()*getN()*(o/100));
 	}
+	
 	public void printMatrix()
 	{
 		for(int i = 0; i < getN(); i++)
@@ -101,6 +120,7 @@ public class Matrix
 		}
 		System.out.println();
 	}
+	
 	private int pos(int i, int j)
 	{
 		if ((i < 0) || (j < 0) || (i >= getM()) || (i >= getN()))
@@ -111,6 +131,7 @@ public class Matrix
 		else
 			return i*getN()+j;
 	}
+	
 	public void fillMatrix(int x)
 	{
 		for(int i = 0; i < matrix.length; i++)
@@ -118,10 +139,12 @@ public class Matrix
 			this.matrix[i] = x;
 		}
 	}
+	
 	public void setCarPos()
 	{
 		this.matrix[pos(car.getxC(),car.getyC())] = 1;
 	}
+	
 	public void moveCar(int m)
 	{
 		if(m == 1)
@@ -134,6 +157,7 @@ public class Matrix
 			car.moveRight();
 		setCarPos();
 	}
+	
 	public void setBorde()
 	{
 		for(int j = 0; j < getN(); j = j+1*getN()-1)
@@ -151,6 +175,7 @@ public class Matrix
 			}
 		}
 	}
+	
 	public void setObstaculos()
 	{		
 		for(int i = 0; i < conos.length; i++)
@@ -172,12 +197,46 @@ public class Matrix
 			matrix[pos(x,y)] = 3;
 		}
 	}
+	
 	public void createConos()
 	{
 		for(int i = 0; i < conos.length; i++)
 		{
 			Obstaculo cono = new Obstaculo();
 			conos[i] = cono;
+		}
+	}
+	
+	public void createPasajeros()
+	{
+		for(int i = 0; i < pasajeros.length; i++)
+		{
+			Persona pasajero = new Persona();
+			pasajeros[i] = pasajero;
+		}
+	}
+	
+	public void setPasajeros()
+	{		
+		for(int i = 0; i < pasajeros.length; i++)
+		{
+			Random rnd = new Random();
+			
+			pasajeros[i].setX(rnd.nextInt((getN()-2) - 1 + 1) + 1);
+			pasajeros[i].setY(rnd.nextInt((getM()-2) - 1 + 1) + 1);	
+		}
+		printPasajeros();
+	}
+	
+	public void printPasajeros()
+	{
+		for(int i = 0; i < pasajeros.length; i++)
+		{
+			
+			int x = pasajeros[i].getY();
+			int y = pasajeros[i].getX();
+			System.out.println(x + "," + y);
+			matrix[pos(x,y)] = 4;
 		}
 	}
 }
