@@ -58,6 +58,7 @@ public class MatrixPanel extends JPanel {
 		}
 		**/
 		g.drawImage(new ImageIcon("res/images/fondo.jpg").getImage(),0,0,700,700,this);
+		g.drawImage(new ImageIcon("res/images/fondo.jpg").getImage(),600,800,600,200,this);
 		
 		if(this.malla == true)
 		{

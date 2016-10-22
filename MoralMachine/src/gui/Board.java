@@ -49,7 +49,7 @@ public class Board extends JPanel {
 		
 		this.setLayout(null); 
 		this.setSize(new Dimension(600,300)); 
-		this.setLocation(50,200);
+		this.setLocation(100,250);
 		//this.setLocation(((int)(dimension_backgroundpanel.getWidth()/2)-(this.getWidth()/2)),((int)(dimension_backgroundpanel.getHeight()/2)-(this.getHeight()/2))); 
 		this.setBorder(new LineBorder(new Color(208,168,10),3));
 	}
