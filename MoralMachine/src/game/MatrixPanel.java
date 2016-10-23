@@ -63,12 +63,10 @@ public class MatrixPanel extends JPanel {
 		if(this.malla == true)
 		{
 			printMalla(g, IMAGESIZE, IMAGESIZE2);
-			System.out.println("IF printMalla");
 		}
 		else
 		{
 			printNoMalla(g, IMAGESIZE, IMAGESIZE2);
-			System.out.println("IF printNoMalla");
 		}
 		
 		this.setOpaque(false);
@@ -96,12 +94,10 @@ public class MatrixPanel extends JPanel {
 		if(malla == 0)
 		{
 			this.malla = true;
-			System.out.println("Malla: true");
 		}
 		else
 		{
 			this.malla = false;
-			System.out.println("Malla: false");
 
 		}
 	}

@@ -157,7 +157,6 @@ public class Matrix
 	
 	public void setMetaPos()
 	{
-		System.out.println(fin.getX() +"," +fin.getY());
 		this.matrix[pos(fin.getX(),fin.getY())] = 6;
 	}
 	
@@ -242,12 +241,10 @@ public class Matrix
 			if(random == true)
 			{
 				pasajero = new Persona(4);
-				System.out.println("Creando una chico");
 			}
 			else
 			{
 				pasajero = new Persona(5);
-				System.out.println("Creando una chica");
 			}
 			pasajeros[i] = pasajero;
 		}
@@ -280,7 +277,6 @@ public class Matrix
 			
 			int x = pasajeros[i].getY();
 			int y = pasajeros[i].getX();
-			System.out.println(x + "," + y);
 			if(pasajeros[i].getId() == 4)
 				matrix[pos(x,y)] = 4;
 			else
