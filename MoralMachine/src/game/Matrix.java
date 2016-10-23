@@ -201,6 +201,12 @@ public class Matrix
 			conos[i].set_x(rnd.nextInt((getN()-2) - 1 + 1) + 1);
 			conos[i].set_y(rnd.nextInt((getM()-2) - 1 + 1) + 1);
 			
+			while(matrix[pos(conos[i].get_x(),conos[i].get_y())] != 0)
+			{
+				conos[i].set_x(rnd.nextInt((getN()-2) - 1 + 1) + 1);
+				conos[i].set_y(rnd.nextInt((getM()-2) - 1 + 1) + 1);
+			}
+			
 		}
 		printObstaculos();
 	}
@@ -217,6 +223,7 @@ public class Matrix
 	
 	public void createConos()
 	{
+		
 		for(int i = 0; i < conos.length; i++)
 		{
 			Obstaculo cono = new Obstaculo();
@@ -254,7 +261,14 @@ public class Matrix
 			
 			pasajeros[i].setX(rnd.nextInt((getN()-2) - 1 + 1) + 1);
 			pasajeros[i].setY(rnd.nextInt((getM()-2) - 1 + 1) + 1);	
+			
+			while(matrix[pos(pasajeros[i].getX(), pasajeros[i].getX())] != 0)
+			{
+				pasajeros[i].setX(rnd.nextInt((getN()-2) - 1 + 1) + 1);
+				pasajeros[i].setX(rnd.nextInt((getM()-2) - 1 + 1) + 1);
+			}
 		}
+		
 		
 		printPasajeros();
 	}
@@ -273,10 +287,15 @@ public class Matrix
 				matrix[pos(x,y)] = 5;
 		}
 	}
+	
+
+	
 	public void createObstaculos()
 	{
 		int setenta = (int)(getObs()*0.7);
 		int treinta = (int)getObs() - setenta;
+		
+		System.out.println("Porcentaje: " + treinta + "," + setenta);
 		
 		this.conos = new Obstaculo[setenta];
 		this.pasajeros = new Persona[treinta];

@@ -26,6 +26,21 @@ public class Information extends JPanel
 		//this.setBorder(new LineBorder(new Color(208,168,10),3));
 		this.setBackground(new Color(196,196,196));
 	}
+	
+	public void setMatrixInfo(Matrix info)
+	{
+		this.info = new Matrix(info.getM(),info.getN(),info.getnObs());
+		this.info = info;
+		for(int i = 0; i < this.info.getM(); i++)
+		{
+			for(int j = 0; j < this.info.getN(); j++)
+			{
+				System.out.println(this.info.getValue(i, j));
+
+			}
+		}
+	}
+	
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
@@ -46,7 +61,7 @@ public class Information extends JPanel
 			g1.setFont(titulo2);
 			g1.drawString("Obstaculos y personas", 10, 130);
 				g1.setFont(texto);
-				g1.drawString("% de obstaculos:", 10, 150);
+				g1.drawString("% de iobstaculos:", 10, 150);
 				g1.drawString("Número de Conos:", 10, 165);
 				g1.drawString("Número de Chicas:", 10, 180);
 				g1.drawString("Número de Chicos:", 10, 195);
@@ -59,17 +74,5 @@ public class Information extends JPanel
 				g1.drawString("Pasajeros recogidos:", 10, 150);
 	}
 	
-	public void setMatrixInfo(Matrix info)
-	{
-		this.info = new Matrix(info.getM(),info.getN(),info.getnObs());
-		this.info = info;
-		for(int i = 0; i < this.info.getM(); i++)
-		{
-			for(int j = 0; j < this.info.getN(); j++)
-			{
-				System.out.println(this.info.getValue(i, j));
 
-			}
-		}
-	}
 }

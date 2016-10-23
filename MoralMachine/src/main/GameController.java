@@ -82,7 +82,8 @@ public GameController() {
 		matrixpanel = new MatrixPanel(a,b,c); 
 		this.add(matrixpanel); 
 		this.setSize(new Dimension(800,622)); 
-		information.setMatrixInfo(matrixpanel.getGame_board());
+		//information.setMatrixInfo(matrixpanel.getGame_board());
+
 	}
 	
 public void addActionListener() { 
@@ -100,6 +101,7 @@ public void addActionListener() {
 			this.initialize_matrix_panel(); 
 			matrixpanel.getGame_board();
 			matrixpanel.repaint();
+
 		}
 		if(e.getSource() == backgroundstartpanel.getStartpanel().getButton_exit()) { 
 			System.exit(0); 
