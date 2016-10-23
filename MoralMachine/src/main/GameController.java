@@ -40,6 +40,7 @@ public GameController() {
 		this.addActionListener(); 
 		addMouseListener(this); 
 		this.setVisible(true); 
+		
 	}
 
 	public void add_characteristics() { 
@@ -57,10 +58,13 @@ public GameController() {
 		mainpanel.setVisible(false); 
 		JScrollPane scroll = new JScrollPane();
 		scroll.setViewportView(mainpanel); 
+		
 	}
 	
 	public void add_components() { 
 		
+		
+
 		this.add(mainpanel); 
 		this.add(backgroundstartpanel); 
 		this.add(information);
@@ -78,6 +82,7 @@ public GameController() {
 		matrixpanel = new MatrixPanel(a,b,c); 
 		this.add(matrixpanel); 
 		this.setSize(new Dimension(800,622)); 
+		information.setMatrixInfo(matrixpanel.getGame_board());
 	}
 	
 public void addActionListener() { 

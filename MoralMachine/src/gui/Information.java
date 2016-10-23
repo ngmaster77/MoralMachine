@@ -1,16 +1,21 @@
 package gui;
 
+import game.Matrix;
 
 import javax.swing.*;
 import java.awt.*;
-import game.Matrix;
+
 
 public class Information extends JPanel
 {
+	private Matrix info;
+	
 	public Information()
 	{ 
+		this.info = null;
 		this.add_characteristics(); 
-		this.setVisible(true); 	
+		this.setVisible(true);
+
 	}
 
 	public void add_characteristics()
@@ -52,5 +57,19 @@ public class Information extends JPanel
 				g1.setFont(texto);
 				g1.drawString("Posición coche (x,y):", 10, 150);
 				g1.drawString("Pasajeros recogidos:", 10, 150);
+	}
+	
+	public void setMatrixInfo(Matrix info)
+	{
+		this.info = new Matrix(info.getM(),info.getN(),info.getnObs());
+		this.info = info;
+		for(int i = 0; i < this.info.getM(); i++)
+		{
+			for(int j = 0; j < this.info.getN(); j++)
+			{
+				System.out.println(this.info.getValue(i, j));
+
+			}
+		}
 	}
 }

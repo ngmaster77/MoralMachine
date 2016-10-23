@@ -13,6 +13,7 @@ public class Matrix
 	private Persona pasajeros[];
 	private Meta fin;
 	private Random rnd;
+	private int nObs;
 	
 	public Matrix()
 	{
@@ -34,6 +35,7 @@ public class Matrix
 	{
 		this.m = m;
 		this.n = n;
+		this.nObs = (int)obstaculos;
 		this.obstaculos = (m*n*(dificultad/100));
 		this.matrix = new int[m*n];
 		this.car = new Coche(1,1);
@@ -54,6 +56,7 @@ public class Matrix
 	{
 		this.m = m;
 		this.n = n;
+		this.nObs = (int)obstaculos;
 		this.obstaculos = (m*n*(obstaculos/100));
 		this.matrix = new int[m*n];
 		this.car = new Coche(xc, yc);
@@ -107,6 +110,11 @@ public class Matrix
 	public void setObs(int o)
 	{
 		this.obstaculos = (getM()*getN()*(o/100));
+	}
+	
+	public int getnObs()
+	{
+		return nObs;
 	}
 	
 	public void printMatrix()
@@ -247,6 +255,7 @@ public class Matrix
 			pasajeros[i].setX(rnd.nextInt((getN()-2) - 1 + 1) + 1);
 			pasajeros[i].setY(rnd.nextInt((getM()-2) - 1 + 1) + 1);	
 		}
+		
 		printPasajeros();
 	}
 	
