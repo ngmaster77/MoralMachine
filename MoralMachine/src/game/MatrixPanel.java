@@ -136,7 +136,6 @@ public class MatrixPanel extends JPanel {
 				}
 				if ( game_board.getValue(i, j) == 6)
 				{
-					System.out.println("hola");
 					g.drawImage(new ImageIcon("res/images/Carretera/meta.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
 			}
@@ -173,7 +172,6 @@ public class MatrixPanel extends JPanel {
 				}
 				if ( game_board.getValue(i, j) == 6)
 				{
-					System.out.println("hola");
 					g.drawImage(new ImageIcon("res/images/Carretera/mmeta.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
 			}

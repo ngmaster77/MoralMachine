@@ -3,29 +3,54 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import game.Matrix;
 
-public class Information extends JPanel {
-
-
-	
-	
-public Information() { 
-		
-		
+public class Information extends JPanel
+{
+	public Information()
+	{ 
 		this.add_characteristics(); 
 		this.setVisible(true); 	
 	}
 
-	public void add_characteristics() { 
-	
-	this.setLayout(null); 
-	this.setSize(new Dimension(200,800)); 
-	this.setLocation(600,0);
-	//this.setBorder(new LineBorder(new Color(208,168,10),3));
-	this.setBackground(new Color(196,196,196));
+	public void add_characteristics()
+	{ 
+		this.setLayout(null); 
+		this.setSize(new Dimension(200,800)); 
+		this.setLocation(600,0);
+		//this.setBorder(new LineBorder(new Color(208,168,10),3));
+		this.setBackground(new Color(196,196,196));
 	}
-	
-	
-	
-	
+	public void paintComponent(Graphics g)
+	{
+		super.paintComponent(g);
+		
+		Graphics2D g1 = (Graphics2D) g;
+		
+		Font titulo1 = new Font("Verdana", Font.BOLD, 15);
+		Font titulo2 = new Font("Verdana", Font.ITALIC, 15);
+		Font texto = new Font("Verdana", Font.PLAIN, 10);
+		g1.setFont(titulo1);
+		g1.drawString("PANEL DE DATOS", 30, 20);
+			g1.setFont(titulo2);
+			g1.drawString("Tamaño de la matriz", 10, 50);
+				g1.setFont(texto);
+				g1.drawString("Filas (M): ", 10, 70);
+				g1.drawString("Columnas (N): ", 10, 85);
+				g1.drawString("Total de casillas (MxN): ", 10, 100);
+			g1.setFont(titulo2);
+			g1.drawString("Obstaculos y personas", 10, 130);
+				g1.setFont(texto);
+				g1.drawString("% de obstaculos:", 10, 150);
+				g1.drawString("Número de Conos:", 10, 165);
+				g1.drawString("Número de Chicas:", 10, 180);
+				g1.drawString("Número de Chicos:", 10, 195);
+			g1.setFont(titulo2);
+			g1.drawString("Malla: ", 10, 225);
+			g1.setFont(titulo2);
+			g1.drawString("Estado actual", 10, 155);
+				g1.setFont(texto);
+				g1.drawString("Posición coche (x,y):", 10, 150);
+				g1.drawString("Pasajeros recogidos:", 10, 150);
+	}
 }
