@@ -65,7 +65,7 @@ public class Information extends JPanel
 				g1.drawString("Número de Conos:" + info.getConos(), 10, 165);
 				g1.drawString("Número de Chicas:" + info.getChicas(), 10, 180);
 				g1.drawString("Número de Chicos:" + info.getChicos(), 10, 195);
-				g1.drawString("% de iobstaculos:" + info.getDificultad(), 10, 150);
+				g1.drawString("% de obstaculos:" + info.getDificultad(), 10, 150);
 			g1.setFont(titulo2);
 			
 			g1.drawString("Malla: ", 10, 225);
