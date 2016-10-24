@@ -297,4 +297,72 @@ public class Matrix
 		this.pasajeros = new Persona[treinta];
 	}
 	
+	public int getConos()
+	{
+		int conos = 0;
+		  
+		for(int i = 0; i < getN(); i++)
+		{
+			for(int j = 0; j < getM(); j++)
+			{
+				
+				if (this.matrix[pos(i,j)] == 3)
+				{
+					conos++;
+				}
+				
+			}
+		}
+		
+		return conos;
+	}
+	
+	public int getChicas()
+	{
+		
+	  int chicas = 0;
+	  
+		for(int i = 0; i < getN(); i++)
+		{
+			for(int j = 0; j < getM(); j++)
+			{
+				
+				if (this.matrix[pos(i,j)] == 5)
+				{
+					chicas++;
+				}
+				
+			}
+		}
+		
+		return chicas;
+	}
+	
+	public int getChicos()
+	{
+		
+	  int chicos = 0;
+	  
+		for(int i = 0; i < getN(); i++)
+		{
+			for(int j = 0; j < getM(); j++)
+			{
+				
+				if (this.matrix[pos(i,j)] == 4)
+				{
+					chicos++;
+				}
+				
+			}
+		}
+		
+		return chicos;
+	}
+	
+	public double getDificultad()
+	{
+		return obstaculos; 
+	}
+	
+	
 }
