@@ -5,8 +5,6 @@ public class Node {
 	
 	private int id_x;
 	private int id_y;
-	
-	
 	private int f;
 	private int g;
 	private int h;
@@ -100,14 +98,4 @@ public class Node {
 	}
 
 	
-
-	public boolean equal(Node a) { 
-
-		if(a.get_id_x() == this.get_id_x() && a.get_id_y() == this.get_id_y()) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
 }
