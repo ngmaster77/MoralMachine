@@ -55,9 +55,9 @@ public class Information extends JPanel
 			g1.setFont(titulo2);
 			g1.drawString("Tamaño de la matriz", 10, 50);
 				g1.setFont(texto);
-				g1.drawString("Filas (M): ", 10, 70);
-				g1.drawString("Columnas (N): ", 10, 85);
-				g1.drawString("Total de casillas (MxN): ", 10, 100);
+				g1.drawString("Filas (M): " + info.getM(), 10, 70);
+				g1.drawString("Columnas (N): " + info.getN(), 10, 85);
+				g1.drawString("Total de casillas (MxN): " + (info.getM() * info.getN()), 10, 100);
 			g1.setFont(titulo2);
 			g1.drawString("Obstaculos y personas", 10, 130);
 				g1.setFont(texto);

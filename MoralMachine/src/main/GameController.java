@@ -67,7 +67,7 @@ public GameController() {
 
 		this.add(mainpanel); 
 		this.add(backgroundstartpanel); 
-		this.add(information);
+		
 		
 	}
 	
@@ -82,7 +82,8 @@ public GameController() {
 		matrixpanel = new MatrixPanel(a,b,c); 
 		this.add(matrixpanel); 
 		this.setSize(new Dimension(800,622)); 
-		//information.setMatrixInfo(matrixpanel.getGame_board());
+		information.setMatrixInfo(matrixpanel.getGame_board());
+		this.add(information);
 
 	}
 	
