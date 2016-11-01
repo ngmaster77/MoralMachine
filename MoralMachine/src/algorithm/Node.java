@@ -97,5 +97,13 @@ public class Node {
 	    f = g + h;
 	}
 
-	
+	public boolean equal(Node a) { 
+
+		if(a.get_id_x() == this.get_id_x() && a.get_id_y() == this.get_id_y()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 }
