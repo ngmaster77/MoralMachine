@@ -16,6 +16,7 @@ public class Matrix
 	private Meta fin;
 	private Random rnd;
 	private int nObs;
+	private boolean malla;
 	
 	public Matrix()
 	{
@@ -26,6 +27,7 @@ public class Matrix
 		this.car = new Coche();
 		this.conos = new Obstaculo[(int)getObs()];
 		this.pasajeros = null;
+		this.malla = false;
 		fillMatrix(0);
 		setBorde();
 		setObstaculos();
@@ -43,6 +45,7 @@ public class Matrix
 		this.car = new Coche(1,1);
 		this.fin = new Meta(1,2);
 		this.obs = (int) dificultad;
+		this.malla = false;
 		createObstaculos();
 		createPasajeros();
 		createConos();
@@ -63,6 +66,7 @@ public class Matrix
 		this.matrix = new int[m*n];
 		this.car = new Coche(xc, yc);
 		this.fin = new Meta(1,2);
+		this.malla = false;
 		createObstaculos();
 		createPasajeros();
 		createConos();
@@ -84,6 +88,7 @@ public class Matrix
 		this.car = new Coche(xC,yC);
 		this.fin = new Meta(xM,yM);
 		this.obs = (int) dificultad;
+		this.malla = false;
 		createObstaculos();
 		createPasajeros();
 		createConos();
@@ -135,9 +140,17 @@ public class Matrix
 		this.obstaculos = (getM()*getN()*(o/100));
 	}
 	
+	public void setMalla(boolean malla){
+		this.malla = malla;
+	}
+	
 	public int getnObs()
 	{
 		return nObs;
+	}
+	
+	public boolean getMalla(){
+		return malla;
 	}
 	
 	public void printMatrix()
@@ -175,7 +188,7 @@ public class Matrix
 	public void setCarPos()
 	{
 		
-		this.matrix[pos(car.getxC(),car.getyC())] = 1;
+		this.matrix[pos(car.getxC(),car.getyC())] = 7;
 	}
 	
 	public void setMetaPos()

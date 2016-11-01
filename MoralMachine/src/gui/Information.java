@@ -93,7 +93,7 @@ public class Information extends JPanel
 				g1.drawString("Número de Chicas:" + info.getChicas(), 10, 180);
 				g1.drawString("Número de Chicos:" + info.getChicos(), 10, 195);
 			g1.setFont(titulo2);
-			g1.drawString("Malla: ", 10, 225);
+			g1.drawString("Malla: "+ info.getMalla(), 10, 225);
 			g1.setFont(titulo2);
 			g1.drawString("Estado actual", 10, 255);
 				g1.setFont(texto);

@@ -73,6 +73,7 @@ public class MatrixPanel extends JPanel {
 		if(this.malla == true)
 		{
 			printMalla(g, IMAGESIZE, IMAGESIZE2);
+			game_board.setMalla(true);
 		}
 		else
 		{
@@ -144,6 +145,22 @@ public class MatrixPanel extends JPanel {
 				{
 					g.drawImage(new ImageIcon("res/images/Carretera/meta.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
+				if ( game_board.getValue(i, j) == 7)
+				{
+					g.drawImage(new ImageIcon("res/images/Personajes/cochearriba.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 8)
+				{
+					g.drawImage(new ImageIcon("res/images/Personajes/cocheabajo.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 9)
+				{
+					g.drawImage(new ImageIcon("res/images/Personajes/cochederecha.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 10)
+				{
+					g.drawImage(new ImageIcon("res/images/Personajes/cocheizquierda.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
 			}
 		}
 	}
@@ -179,6 +196,22 @@ public class MatrixPanel extends JPanel {
 				if ( game_board.getValue(i, j) == 6)
 				{
 					g.drawImage(new ImageIcon("res/images/Carretera/mmeta.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 7)
+				{
+					g.drawImage(new ImageIcon("res/images/Personajes/mcochearriba.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 8)
+				{
+					g.drawImage(new ImageIcon("res/images/Personajes/mcocheabajo.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 9)
+				{
+					g.drawImage(new ImageIcon("res/images/Personajes/mcochederecha.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 10)
+				{
+					g.drawImage(new ImageIcon("res/images/Personajes/mcocheizquierda.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
 			}
 		}
