@@ -30,7 +30,7 @@ public class Algorithm {
 
 		for (int i = 0; i < dashboard.getM(); i++) {
 			for (int j = 0; j < dashboard.getN(); j++) {
-				if(dashboard.getValue(i,j) == 1) { 
+				if(dashboard.getValue(i,j) == 7) { 
 					origin_x = i; 
 					origin_y = j; 
 				}
@@ -46,7 +46,7 @@ public class Algorithm {
 
 	public void try_node(int i, int j, boolean direction, Node father) { 
 		if(fin == false) { 
-			if(dashboard.getValue(i,j) == 1) { 
+			if(dashboard.getValue(i,j) == 6) { 
 				fin = true;
 				return;
 			}

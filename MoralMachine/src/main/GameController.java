@@ -178,18 +178,9 @@ public void addActionListener() {
       		}
       		else { 
       			
-      			
-      				for(int i = 0; i < matrixpanel.getGame_board().getM(); i++) {
-      					for(int j = 0; j < matrixpanel.getGame_board().getN(); j++) {
-      						if(matrixpanel.getGame_board().getValue(i,j) == 80) { 
-      							matrixpanel.getGame_board().setValue(i,j,89); 
-      						}
-      					}
-      				}
-      				matrixpanel.repaint(); 
-      			
+     
       				try { 
-      					Thread.sleep(3900);
+      					Thread.sleep(1000);
       				} catch(InterruptedException ex) {} 
       			
       				while(list_solution.empty() == false) {
@@ -236,8 +227,7 @@ public void addActionListener() {
 								
 							
 	      					}
-	      					if(matrixpanel.getGame_board().getValue(i,j) == 100) {
-	      						matrixpanel.getGame_board().setValue(i,j,101); 
+	      					if(matrixpanel.getGame_board().getValue(i,j) == 6) {
 	      						matrixpanel.repaint(); 
 	      					}
 	      				}
@@ -246,19 +236,18 @@ public void addActionListener() {
       			
       			
 	      		try { 
-		      		Thread.sleep(2600); 
+		      		Thread.sleep(1000); 
 				} catch(InterruptedException ex) {} 
       			for(int i = 0; i < matrixpanel.getGame_board().getM(); i++) {
       				for(int j = 0; j < matrixpanel.getGame_board().getN(); j++) {
-      					if(matrixpanel.getGame_board().getValue(i,j) == 101) {
-      						matrixpanel.getGame_board().setValue(i,j,-1); 
+      					if(matrixpanel.getGame_board().getValue(i,j) == 6) {
       						matrixpanel.repaint(); 
-      					}
+      					
       				}
       			}
 	      	}
 		}
+		}
 	}
-	
 	
 }

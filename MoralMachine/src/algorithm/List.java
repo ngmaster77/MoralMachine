@@ -42,6 +42,7 @@ public class List {
 	    int contador = 0; 
 	    List_Node nodoauxiliarity = first; 
 	    while(nodoauxiliarity != null) { 
+	    	contador++;
 	      nodoauxiliarity = nodoauxiliarity.getNext(); 
 	    }
 
