@@ -122,7 +122,7 @@ public class MatrixPanel extends JPanel {
 				}
 				if ( game_board.getValue(i, j) == 1)
 				{
-					g.drawImage(new ImageIcon("res/images/Personajes/coche.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+					g.drawImage(new ImageIcon("res/images/Personajes/cocheabajo.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
 				if ( game_board.getValue(i, j) == 2)
 				{
@@ -158,7 +158,7 @@ public class MatrixPanel extends JPanel {
 				}
 				if ( game_board.getValue(i, j) == 1)
 				{
-					g.drawImage(new ImageIcon("res/images/Personajes/mcoche.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+					g.drawImage(new ImageIcon("res/images/Personajes/mcocheabajo.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
 				if ( game_board.getValue(i, j) == 2)
 				{

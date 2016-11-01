@@ -49,10 +49,9 @@ public class Matrix
 		fillMatrix(0);
 		setBorde();		
 		setObstaculos();
+		setPasajeros();
 		setCarPos();
 		setMetaPos();
-		setPasajeros();
-
 	}
 	
 	public Matrix(int n, int m, double obstaculos, int xc, int yc)
@@ -70,9 +69,9 @@ public class Matrix
 		fillMatrix(0);
 		setBorde();		
 		setObstaculos();
+		setPasajeros();
 		setCarPos();
 		setMetaPos();
-		setPasajeros();
 	}
 	
 	public Matrix(int m,int n,double dificultad, int xC, int yC, int xM, int yM)
@@ -91,10 +90,9 @@ public class Matrix
 		fillMatrix(0);
 		setBorde();		
 		setObstaculos();
+		setPasajeros();
 		setCarPos();
 		setMetaPos();
-		setPasajeros();
-
 	}
 	
 	public int getM()

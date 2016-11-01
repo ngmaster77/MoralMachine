@@ -9,6 +9,8 @@ import java.awt.*;
 public class Information extends JPanel
 {
 	private Matrix info;
+	private JButton button_start;
+	private JButton button_exit;
 	
 	public Information()
 	{ 
@@ -23,8 +25,33 @@ public class Information extends JPanel
 		this.setLayout(null); 
 		this.setSize(new Dimension(200,800)); 
 		this.setLocation(600,0);
-		//this.setBorder(new LineBorder(new Color(208,168,10),3));
 		this.setBackground(new Color(196,196,196));
+		this.button_start = new JButton("Comenzar");
+		this.button_exit = new JButton("Salir");
+		this.add(button_start);
+		this.add(button_exit);
+		button_start.setBounds(45,330,100,20);
+		button_exit.setBounds(45,360,100,20);
+	}
+	
+	public JButton getButtonExit()
+	{
+		return this.button_exit;
+	}
+	
+	public JButton getButtonStart()
+	{
+		return this.button_start;
+	}
+	
+	public void setButtonStart(JButton button_start)
+	{
+		this.button_start = button_start;
+	}
+	
+	public void setButtonExit(JButton button_exit)
+	{
+		this.button_exit = button_exit;
 	}
 	
 	public void setMatrixInfo(Matrix info)
