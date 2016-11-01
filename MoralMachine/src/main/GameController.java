@@ -11,7 +11,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.*;
 import java.lang.*;
-
+import algorithm.Algorithm;
+import algorithm.*;
 
 public class GameController extends JFrame implements ActionListener, MouseListener 
 {
@@ -24,6 +25,8 @@ public class GameController extends JFrame implements ActionListener, MouseListe
 	private boolean car_selected; 
 	private boolean finish_selected; 
 	private boolean checkbox_path_checked;
+	private Algorithm minimum_path;
+
 
 public GameController() {
 		
@@ -91,6 +94,8 @@ public void addActionListener() {
 	
 		backgroundstartpanel.getStartpanel().getButton_start().addActionListener(this); 
 		backgroundstartpanel.getStartpanel().getButton_exit().addActionListener(this); 
+		information.getButtonExit().addActionListener(this);
+		information.getButtonStart().addActionListener(this);
 	}
 	
 	@Override
@@ -107,34 +112,19 @@ public void addActionListener() {
 		if(e.getSource() == backgroundstartpanel.getStartpanel().getButton_exit()) { 
 			System.exit(0); 
 		}
+		
+		if(e.getSource() == information.getButtonExit()) { 
+			new GameController();
+		}
+		
+		if(e.getSource() == information.getButtonStart()) { 
+			minimum_path = new Algorithm(matrixpanel.getGame_board());
+			this.begin();
+		}
 	}
 	
 	@Override
-	public void mouseClicked(MouseEvent e) {  
-		int scale = 70;
-		int coordenada_x = e.getX(); 
-		int coordenada_y = e.getY(); 
-		int position_x = (int)(coordenada_x/scale);
-		int position_y = (int)(coordenada_y/scale);
-		/**
-		if((this.getButton_selection() == 1) && 
-		   (this.car_selected == false)) {
-		   //(matrixpanel.getGame_board().getValue(position_y, position_x) > 3) &&
-		   //(matrixpanel.getGame_board().getValue(position_y, position_x) < 80)) { 
-			matrixpanel.getGame_board().setValue(position_y,position_x,80); 
-			this.car_selected = true;
-		}
-		
-		**/
-		if((this.getButton_selection() == 2) && 
-		   (this.car_selected == false) &&
-		   (matrixpanel.getGame_board().getValue(position_y, position_x) > 3) &&
-		   (matrixpanel.getGame_board().getValue(position_y, position_x) < 80)) { 
-			matrixpanel.getGame_board().setValue(position_y,position_x,100); 
-			this.finish_selected = true; 
-		}
-		matrixpanel.repaint(); // Nueva llamada al método paint.
-	}
+	public void mouseClicked(MouseEvent e) {}
 	
 	
 	@Override
@@ -166,6 +156,109 @@ public void addActionListener() {
 	
 
 	
+	public void begin() { 
+						  
+
+		Thread beginning = new Thread (new start_class());
+		beginning.start(); 
+	}
+
+	public class start_class implements Runnable { 
+
+		public void run() { 
+
+			List list_solution = null; 
+      		list_solution = minimum_path.beggining(); 
+      		int value_path = 0; 
+      		
+			
+			
+      		if(list_solution == null) { 
+      			JOptionPane.showMessageDialog(null, "NO EXISTE SOLUCIÓN"); 
+      		}
+      		else { 
+      			
+      			
+      				for(int i = 0; i < matrixpanel.getGame_board().getM(); i++) {
+      					for(int j = 0; j < matrixpanel.getGame_board().getN(); j++) {
+      						if(matrixpanel.getGame_board().getValue(i,j) == 80) { 
+      							matrixpanel.getGame_board().setValue(i,j,89); 
+      						}
+      					}
+      				}
+      				matrixpanel.repaint(); 
+      			
+      				try { 
+      					Thread.sleep(3900);
+      				} catch(InterruptedException ex) {} 
+      			
+      				while(list_solution.empty() == false) {
+      					Node auxiliary_node = list_solution.extract(); 
+      					int x = auxiliary_node.get_id_x(); 
+      					int y = auxiliary_node.get_id_y(); 
+	      			
+					
+		      			for(int i = 0; i < matrixpanel.getGame_board().getM(); i++) {
+		      				for(int j = 0; j < matrixpanel.getGame_board().getN(); j++) {
+		      					if((matrixpanel.getGame_board().getValue(i,j) >= 7) && (matrixpanel.getGame_board().getValue(i,j) < 11)) { 
+		      						if((x < i) && (y == j)) { // CONDICIÓN: Si se produce un movimiento hacia arriba
+			      						matrixpanel.getGame_board().setValue(i,j,0); 
+		      							matrixpanel.getGame_board().setValue(x,y,7); 
+		      						}
+		      						if((x > i) && (y == j)) { // CONDICIÓN: Si se produce un movimiento hacia abajo
+			      						matrixpanel.getGame_board().setValue(i,j,0); 
+		      							matrixpanel.getGame_board().setValue(x,y,8); 
+		      						}
+		      						if((x == i) && (y > j)) { // CONDICIÓN: Si se produce un movimiento hacia a la derecha
+			      						matrixpanel.getGame_board().setValue(i,j,0); 
+		      							matrixpanel.getGame_board().setValue(x,y,9); 
+		      						}
+		      						if((x == i) && (y < j)) { // CONDICIÓN: Si se produce un movimiento hacia a la izquierda
+			      						matrixpanel.getGame_board().setValue(i,j,0); 
+		      							matrixpanel.getGame_board().setValue(x,y,10); 
+		      						}
+		      						
+		      					}
+		      				}
+		      			}
+		      			matrixpanel.repaint(); 
+	
+		      			try { 
+		      				Thread.sleep(125); 
+						} catch(InterruptedException ex) {} 		
+		      		}
+	      			for(int i = 0; i < matrixpanel.getGame_board().getM(); i++) {
+	      				for(int j = 0; j < matrixpanel.getGame_board().getN(); j++) {
+	      					if((matrixpanel.getGame_board().getValue(i,j) >= 7) && (matrixpanel.getGame_board().getValue(i,j) < 11)) { 
+								
+									matrixpanel.getGame_board().setValue(i,j,0); 
+									matrixpanel.repaint(); 
+								
+							
+	      					}
+	      					if(matrixpanel.getGame_board().getValue(i,j) == 100) {
+	      						matrixpanel.getGame_board().setValue(i,j,101); 
+	      						matrixpanel.repaint(); 
+	      					}
+	      				}
+	      			}
+      			
+      			
+      			
+	      		try { 
+		      		Thread.sleep(2600); 
+				} catch(InterruptedException ex) {} 
+      			for(int i = 0; i < matrixpanel.getGame_board().getM(); i++) {
+      				for(int j = 0; j < matrixpanel.getGame_board().getN(); j++) {
+      					if(matrixpanel.getGame_board().getValue(i,j) == 101) {
+      						matrixpanel.getGame_board().setValue(i,j,-1); 
+      						matrixpanel.repaint(); 
+      					}
+      				}
+      			}
+	      	}
+		}
+	}
 	
 	
 }

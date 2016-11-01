@@ -45,7 +45,7 @@ public class Algorithm {
 	}
 
 	public void try_node(int i, int j, boolean direction, Node father) { 
-		if(fin == false) { // CONDICIÓN: Si no se ha llegado al final.
+		if(fin == false) { 
 			if(dashboard.getValue(i,j) == 1) { 
 				fin = true;
 				return;
