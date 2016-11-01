@@ -7,6 +7,7 @@ public class Matrix
 	private int m;
 	private int n;
 	private double obstaculos;
+	private int obs;
 	private int matrix[];
 	private Coche car;
 	private Obstaculo conos[];
@@ -40,6 +41,7 @@ public class Matrix
 		this.matrix = new int[m*n];
 		this.car = new Coche(1,1);
 		this.fin = new Meta(1,2);
+		this.obs = (int) dificultad;
 		createObstaculos();
 		createPasajeros();
 		createConos();
@@ -70,6 +72,28 @@ public class Matrix
 		setCarPos();
 		setMetaPos();
 		setPasajeros();
+	}
+	
+	public Matrix(int m,int n,double dificultad, int xC, int yC, int xM, int yM)
+	{
+		this.m = m;
+		this.n = n;
+		this.nObs = (int)obstaculos;
+		this.obstaculos = (m*n*(dificultad/100));
+		this.matrix = new int[m*n];
+		this.car = new Coche(xC,yC);
+		this.fin = new Meta(xM,yM);
+		this.obs = (int) dificultad;
+		createObstaculos();
+		createPasajeros();
+		createConos();
+		fillMatrix(0);
+		setBorde();		
+		setObstaculos();
+		setCarPos();
+		setMetaPos();
+		setPasajeros();
+
 	}
 	
 	public int getM()
@@ -361,7 +385,7 @@ public class Matrix
 	
 	public double getDificultad()
 	{
-		return obstaculos; 
+		return obs; 
 	}
 	
 	

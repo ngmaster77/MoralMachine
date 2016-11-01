@@ -19,11 +19,21 @@ public class MatrixPanel extends JPanel {
 	
 	public MatrixPanel(int mainpanel_size, int scale,int dificultad){
 		
+		String posCoche = JOptionPane.showInputDialog(null, "Introduzca posición inicial del coche. (Ej: 4,5)");
+		String[] posC = posCoche.split(",");
+		int xC = Integer.parseInt(posC[0]);
+		int yC = Integer.parseInt(posC[1]);
+		
+		String posMeta = JOptionPane.showInputDialog(null, "Introduzca posición de la meta. (Ej: 4,5)");
+		String[] posM = posMeta.split(",");
+		int xM = Integer.parseInt(posM[0]);
+		int yM = Integer.parseInt(posM[1]);
+		
 		dificultad_ = dificultad;
 		rows = scale ;
-		game_board = new Matrix(mainpanel_size,scale,dificultad_); 
+		//game_board = new Matrix(mainpanel_size,scale,dificultad_);
+		game_board = new Matrix(mainpanel_size,scale,dificultad_, xC, yC, xM, yM);
 		scale_game = (int) mainpanel_size *	 scale;
-		
 		setMalla();
 		add_characteristics(); 
 		//System.out.println(game_board.get_columns());
