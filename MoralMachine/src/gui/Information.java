@@ -11,7 +11,7 @@ public class Information extends JPanel
 	private Matrix info;
 	private JButton button_start;
 	private JButton button_exit;
-	
+
 	public Information()
 	{ 
 		this.info = null;
@@ -62,15 +62,15 @@ public class Information extends JPanel
 		{
 			for(int j = 0; j < this.info.getN(); j++)
 			{
-				System.out.println(this.info.getValue(i, j));
+				//System.out.println(this.info.getValue(i, j));
 
 			}
 		}
 	}
 	
-	public void paintComponent(Graphics g)
+	public void paint(Graphics g)
 	{
-		super.paintComponent(g);
+		super.paint(g);
 		
 		Graphics2D g1 = (Graphics2D) g;
 		
@@ -98,7 +98,9 @@ public class Information extends JPanel
 			g1.drawString("Estado actual", 10, 255);
 				g1.setFont(texto);
 				g1.drawString("Posición coche (x,y):", 10, 275);
-				g1.drawString("Pasajeros recogidos:", 10, 290);
+				g1.drawString("Pasajeros recogidos:" + info.getPasajeros(), 10, 290);
+				
+				
 	}
 	
 

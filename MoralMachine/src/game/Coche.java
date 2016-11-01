@@ -1,16 +1,19 @@
 package game;
 
+
 public class Coche
 {
 	private int xC;
 	private int yC;
 	private int nPasajeros;
 	
+	
 	public Coche()
 	{
 		this.xC = 0;
 		this.yC = 0;
 		this.nPasajeros = 0;
+	
 	}
 	
 	public Coche(int x, int y)
@@ -49,10 +52,7 @@ public class Coche
 	{
 		this.nPasajeros = nPasajeros;
 	}
-	public void addPasajeros()
-	{
-		this.nPasajeros++;
-	}
+	
 	public void moveForward()
 	{
 		setxC(getxC()-1);
@@ -73,15 +73,5 @@ public class Coche
 		setyC(getyC()-1);
 	}
 	
-	public boolean fullPasajeros()
-	{
-		if(nPasajeros == 5)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
+	
 }

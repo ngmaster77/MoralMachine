@@ -14,6 +14,7 @@ public class Algorithm {
 	private int origin_y; 
 	private int destiny_x;  
 	private int destiny_y; 
+	private int pasajeros; 
 	
 	private boolean fin; 
 	private int value_g; 
@@ -27,6 +28,7 @@ public class Algorithm {
 		list_close = new List();
 		list_final = new List();
 		dashboard = game_board; 
+		pasajeros = 0; 
 
 		for (int i = 0; i < dashboard.getM(); i++) {
 			for (int j = 0; j < dashboard.getN(); j++) {
@@ -50,9 +52,13 @@ public class Algorithm {
 				fin = true;
 				return;
 			}
+			
+			
 			if((dashboard.getValue(i,j) == 3) || (dashboard.getValue(i,j) == 2)) { 
 				return;
 			}
+			
+			
 
 			Node node = new Node(i,j,false); 
 
@@ -232,5 +238,9 @@ public class Algorithm {
 
 	public void setDestiny_y(int destiny_y) {
 		this.destiny_y = destiny_y;
+	}
+	
+	public int getPasajeros() {
+	  return 	pasajeros;
 	}
 }

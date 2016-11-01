@@ -16,6 +16,7 @@ public class Matrix
 	private Meta fin;
 	private Random rnd;
 	private int nObs;
+	private int Pasajeros_;
 	private boolean malla;
 	
 	public Matrix()
@@ -159,11 +160,11 @@ public class Matrix
 		{
 			for(int j = 0; j < getM(); j++)
 			{
-				System.out.print(matrix[pos(i,j)]);
+				//System.out.print(matrix[pos(i,j)]);
 			}
-			System.out.println();
+			//System.out.println();
 		}
-		System.out.println();
+		//System.out.println();
 	}
 	
 	private int pos(int i, int j)
@@ -327,7 +328,7 @@ public class Matrix
 		int setenta = (int)(getObs()*0.7);
 		int treinta = (int)getObs() - setenta;
 		
-		System.out.println("Porcentaje: " + treinta + "," + setenta);
+		//System.out.println("Porcentaje: " + treinta + "," + setenta);
 		
 		this.conos = new Obstaculo[setenta];
 		this.pasajeros = new Persona[treinta];
@@ -398,6 +399,16 @@ public class Matrix
 	public double getDificultad()
 	{
 		return obs; 
+	}
+	
+	public int getPasajeros()
+	{
+		return Pasajeros_;
+	}
+	
+	public void setPasajero(int pasajeros)
+	{
+		Pasajeros_ = pasajeros;
 	}
 	
 	

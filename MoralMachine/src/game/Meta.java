@@ -32,6 +32,6 @@ public class Meta {
 	}
 	public void printInfo()
 	{
-		System.out.println("x:" + getX() + " y: " + getY());
+		//System.out.println("x:" + getX() + " y: " + getY());
 	}
 }

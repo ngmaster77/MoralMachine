@@ -22,9 +22,6 @@ public class GameController extends JFrame implements ActionListener, MouseListe
 	private MatrixPanel matrixpanel;
 	private Information information;
 	private int button_selection; 
-	private boolean car_selected; 
-	private boolean finish_selected; 
-	private boolean checkbox_path_checked;
 	private Algorithm minimum_path;
 
 
@@ -34,9 +31,6 @@ public GameController() {
 		mainpanel = new JPanel(); 
 		backgroundstartpanel = new Background(); 	
 		button_selection = 0; 
-		checkbox_path_checked = false; 
-		finish_selected = false;
-		car_selected = false;
 		information = new Information();
 		this.add_characteristics(); 
 		this.add_components(); 
@@ -169,9 +163,11 @@ public void addActionListener() {
 
 			List list_solution = null; 
       		list_solution = minimum_path.beggining(); 
-      		int value_path = 0; 
       		
-			
+      	
+      		
+			int pasajeros = 0;
+      		
 			
       		if(list_solution == null) { 
       			JOptionPane.showMessageDialog(null, "NO EXISTE SOLUCIÓN"); 
@@ -187,24 +183,38 @@ public void addActionListener() {
       					Node auxiliary_node = list_solution.extract(); 
       					int x = auxiliary_node.get_id_x(); 
       					int y = auxiliary_node.get_id_y(); 
-	      			
+      					
+      					information.repaint();
+      					matrixpanel.getGame_board().setPasajero(pasajeros);
 					
 		      			for(int i = 0; i < matrixpanel.getGame_board().getM(); i++) {
 		      				for(int j = 0; j < matrixpanel.getGame_board().getN(); j++) {
 		      					if((matrixpanel.getGame_board().getValue(i,j) >= 7) && (matrixpanel.getGame_board().getValue(i,j) < 11)) { 
 		      						if((x < i) && (y == j)) { // CONDICIÓN: Si se produce un movimiento hacia arriba
+		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
+		      							   pasajeros++;
+		      							}
 			      						matrixpanel.getGame_board().setValue(i,j,0); 
 		      							matrixpanel.getGame_board().setValue(x,y,7); 
 		      						}
 		      						if((x > i) && (y == j)) { // CONDICIÓN: Si se produce un movimiento hacia abajo
+		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
+			      							   pasajeros++;
+			      							}
 			      						matrixpanel.getGame_board().setValue(i,j,0); 
 		      							matrixpanel.getGame_board().setValue(x,y,8); 
 		      						}
 		      						if((x == i) && (y > j)) { // CONDICIÓN: Si se produce un movimiento hacia a la derecha
+		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
+			      							   pasajeros++;
+			      							}
 			      						matrixpanel.getGame_board().setValue(i,j,0); 
 		      							matrixpanel.getGame_board().setValue(x,y,9); 
 		      						}
 		      						if((x == i) && (y < j)) { // CONDICIÓN: Si se produce un movimiento hacia a la izquierda
+		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
+			      							   pasajeros++;
+			      							}
 			      						matrixpanel.getGame_board().setValue(i,j,0); 
 		      							matrixpanel.getGame_board().setValue(x,y,10); 
 		      						}
@@ -212,6 +222,7 @@ public void addActionListener() {
 		      					}
 		      				}
 		      			}
+		      			
 		      			matrixpanel.repaint(); 
 	
 		      			try { 
@@ -242,12 +253,15 @@ public void addActionListener() {
       				for(int j = 0; j < matrixpanel.getGame_board().getN(); j++) {
       					if(matrixpanel.getGame_board().getValue(i,j) == 6) {
       						matrixpanel.repaint(); 
-      					
+      						
       				}
       			}
 	      	}
-		}
-		}
+      	}
+	  }
+		
 	}
+	
+	
 	
 }

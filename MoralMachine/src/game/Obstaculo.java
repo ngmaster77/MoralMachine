@@ -32,6 +32,6 @@ public class Obstaculo {
 	}
 	public void printInfo()
 	{
-		System.out.println("x:" + get_x() + " y: " + get_y());
+		//System.out.println("x:" + get_x() + " y: " + get_y());
 	}
 }
