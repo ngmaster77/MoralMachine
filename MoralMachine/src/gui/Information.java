@@ -86,8 +86,9 @@ public class Information extends JPanel
 	public void paint(Graphics g)
 	{
 		super.paint(g);
-		
 		Graphics2D g1 = (Graphics2D) g;
+		boolean mallaB = info.getMalla();
+		String[] mallaS = {"Activada", "Desactivada"};
 		
 		Font titulo1 = new Font("Verdana", Font.BOLD, 15);
 		Font titulo2 = new Font("Verdana", Font.ITALIC, 15);
@@ -108,7 +109,14 @@ public class Information extends JPanel
 				g1.drawString("Número de Chicas:" + info.getChicas(), 10, 180);
 				g1.drawString("Número de Chicos:" + info.getChicos(), 10, 195);
 			g1.setFont(titulo2);
-			g1.drawString("Malla: "+ info.getMalla(), 10, 225);
+			if(mallaB == true)
+			{
+				g1.drawString("Malla: "+ mallaS[0], 10, 225);
+			}
+			else
+			{
+				g1.drawString("Malla: "+ mallaS[1], 10, 225);
+			}
 			g1.setFont(titulo2);
 			g1.drawString("Estado actual", 10, 255);
 				g1.setFont(texto);

@@ -315,10 +315,8 @@ public void addActionListener() {
 	      				for(int j = 0; j < matrixpanel.getGame_board().getN(); j++) {
 	      					if((matrixpanel.getGame_board().getValue(i,j) >= 7) && (matrixpanel.getGame_board().getValue(i,j) < 11)) { 
 								
-									matrixpanel.getGame_board().setValue(i,j,0); 
+									matrixpanel.getGame_board().setValue(i,j,7); 
 									matrixpanel.repaint(); 
-								
-							
 	      					}
 	      					if(matrixpanel.getGame_board().getValue(i,j) == 6) {
 	      						matrixpanel.repaint(); 
