@@ -120,10 +120,9 @@ public class Information extends JPanel
 			g1.setFont(titulo2);
 			g1.drawString("Estado actual", 10, 255);
 				g1.setFont(texto);
-				g1.drawString("Posición coche (x,y):", 10, 275);
+				g1.drawString("Posición coche (x,y):" + "(" + info.getCarX() + "," + info.getCarY() + ")", 10, 275);
 				g1.drawString("Pasajeros recogidos:" + info.getPasajeros(), 10, 290);
-				
-				
+				g1.drawString("Posición meta (x,y):" + "(" + info.getMeta().getX() + "," + info.getMeta().getY() + ")", 10, 305);
 	}
 	
 

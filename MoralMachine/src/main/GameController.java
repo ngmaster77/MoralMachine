@@ -218,6 +218,7 @@ public void addActionListener() {
 		      								matrixpanel.getGame_board().setValue(x,y,7);
 		      							}
 		      							anterior = 1;
+		      							matrixpanel.getGame_board().moveCar(1);
 		      						}
 		      						if((x > i) && (y == j)) { // CONDICIÓN: Si se produce un movimiento hacia abajo
 		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
@@ -245,6 +246,7 @@ public void addActionListener() {
 		      								matrixpanel.getGame_board().setValue(x,y,8);
 		      							}
 		      							anterior = 2;
+		      							matrixpanel.getGame_board().moveCar(2);
 		      						}
 		      						if((x == i) && (y > j)) { // CONDICIÓN: Si se produce un movimiento hacia a la derecha
 		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
@@ -272,11 +274,13 @@ public void addActionListener() {
 		      								matrixpanel.getGame_board().setValue(x,y,9);
 		      							}
 		      							anterior = 3;
+		      							matrixpanel.getGame_board().moveCar(4);
 		      						}
 		      						if((x == i) && (y < j)) { // CONDICIÓN: Si se produce un movimiento hacia a la izquierda
-		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
-			      							   pasajeros++;
-			      							}
+		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5))
+		      							{
+		      								pasajeros++;
+			      						}
 			      						if(inicio == true)
 			      						{
 			      							matrixpanel.getGame_board().setValue(i,j,14); 
@@ -299,6 +303,7 @@ public void addActionListener() {
 		      								matrixpanel.getGame_board().setValue(x,y,10);
 		      							}
 		      							anterior = 4;
+		      							matrixpanel.getGame_board().moveCar(3);
 		      						}
 		      						
 		      					}
@@ -313,10 +318,25 @@ public void addActionListener() {
 		      		}
 	      			for(int i = 0; i < matrixpanel.getGame_board().getM(); i++) {
 	      				for(int j = 0; j < matrixpanel.getGame_board().getN(); j++) {
-	      					if((matrixpanel.getGame_board().getValue(i,j) >= 7) && (matrixpanel.getGame_board().getValue(i,j) < 11)) { 
-								
-									matrixpanel.getGame_board().setValue(i,j,7); 
-									matrixpanel.repaint(); 
+	      					if((matrixpanel.getGame_board().getValue(i,j) >= 7) && (matrixpanel.getGame_board().getValue(i,j) < 11))
+	      					{ 	
+	      						if(anterior == 1)
+	      						{
+	      							matrixpanel.getGame_board().setValue(i,j,15); 
+	      						}
+      							if(anterior == 2)
+      							{
+      								matrixpanel.getGame_board().setValue(i,j,15); 
+      							}
+      							if(anterior == 3)
+      							{
+      								matrixpanel.getGame_board().setValue(i,j,20); 
+      							}
+      							if(anterior == 4)
+      							{
+      								matrixpanel.getGame_board().setValue(i,j,20); 
+      							}	 
+								matrixpanel.repaint(); 
 	      					}
 	      					if(matrixpanel.getGame_board().getValue(i,j) == 6) {
 	      						matrixpanel.repaint(); 

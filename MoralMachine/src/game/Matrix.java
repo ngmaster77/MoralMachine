@@ -179,7 +179,14 @@ public class Matrix
 	{
 		this.matrix[pos(car.getxC(),car.getyC())] = 7;
 	}
-	
+	public int getCarX()
+	{
+		return this.car.getxC();
+	}
+	public int getCarY()
+	{
+		return this.car.getyC();
+	}
 	public void setMetaPos()
 	{
 		this.matrix[pos(fin.getX(),fin.getY())] = 6;
@@ -216,7 +223,10 @@ public class Matrix
 			}
 		}
 	}
-	
+	public Meta getMeta()
+	{
+		return fin;
+	}
 	public void setObstaculos()
 	{		
 		for(int i = 0; i < conos.length; i++)
