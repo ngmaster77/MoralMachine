@@ -31,15 +31,11 @@ public class MatrixPanel extends JPanel {
 		
 		dificultad_ = dificultad;
 		rows = scale ;
-		//game_board = new Matrix(mainpanel_size,scale,dificultad_);
 		game_board = new Matrix(mainpanel_size,scale,dificultad_, xC, yC, xM, yM);
 		scale_game = (int) mainpanel_size *	 scale;
 		setMalla();
 		add_characteristics(); 
-		//System.out.println(game_board.get_columns());
-		//System.out.println(game_board.get_rows());
-		//System.out.println(rows);
-	}
+		}
 	
 	public void add_characteristics() { 
 		
@@ -52,21 +48,7 @@ public class MatrixPanel extends JPanel {
 		
 		final int IMAGESIZE = Math.min(this.getWidth(), this.getHeight()) / game_board.getN();
 		final int IMAGESIZE2 = Math.min(this.getWidth(), this.getHeight()) / game_board.getM();
-		/**
-		final int IMAGESIZE = Math.min(this.getWidth(), this.getHeight()) / game_board.get_columns();
-		for (int i = 0; i < game_board.get_rows(); i++)  {
-			for (int j = 0; j < game_board.get_columns(); j++) {
-		//g.drawImage(new ImageIcon("res/images/fondo.jpg").getImage(),0,0,1200,500,this);
-				if ((i + j) % 2 == 0) {
-					g.drawImage(new ImageIcon("res/images/blanca.png").getImage(), i * IMAGESIZE, j * IMAGESIZE, IMAGESIZE, IMAGESIZE,this);
-				  } else {
-					  g.drawImage(new ImageIcon("res/images/negra.png").getImage(), i * IMAGESIZE, j * IMAGESIZE, IMAGESIZE, IMAGESIZE,this);
-				  }
-			}
-			
-				
-		}
-		**/
+		
 		g.drawImage(new ImageIcon("res/images/fondo.jpg").getImage(),0,0,700,700,this);
 		g.drawImage(new ImageIcon("res/images/fondo.jpg").getImage(),600,800,600,200,this);
 		

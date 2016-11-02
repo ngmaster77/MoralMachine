@@ -1,7 +1,7 @@
 package game;
 
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class Matrix
 {
@@ -154,18 +154,7 @@ public class Matrix
 		return malla;
 	}
 	
-	public void printMatrix()
-	{
-		for(int i = 0; i < getN(); i++)
-		{
-			for(int j = 0; j < getM(); j++)
-			{
-				//System.out.print(matrix[pos(i,j)]);
-			}
-			//System.out.println();
-		}
-		//System.out.println();
-	}
+	
 	
 	private int pos(int i, int j)
 	{
@@ -328,7 +317,6 @@ public class Matrix
 		int setenta = (int)(getObs()*0.7);
 		int treinta = (int)getObs() - setenta;
 		
-		//System.out.println("Porcentaje: " + treinta + "," + setenta);
 		
 		this.conos = new Obstaculo[setenta];
 		this.pasajeros = new Persona[treinta];

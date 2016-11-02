@@ -1,7 +1,6 @@
 package main;
 
 import gui.Background; 
-import gui.Board;
 import game.MatrixPanel;
 import gui.Information;
 import java.awt.Dimension;
@@ -10,7 +9,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.*;
-import java.lang.*;
 import algorithm.Algorithm;
 import algorithm.*;
 
@@ -90,6 +88,7 @@ public void addActionListener() {
 		backgroundstartpanel.getStartpanel().getButton_exit().addActionListener(this); 
 		information.getButtonExit().addActionListener(this);
 		information.getButtonStart().addActionListener(this);
+		information.getButtonReturn().addActionListener(this);
 	}
 	
 	@Override
@@ -108,12 +107,16 @@ public void addActionListener() {
 		}
 		
 		if(e.getSource() == information.getButtonExit()) { 
-			new GameController();
+			System.exit(0); 
 		}
 		
 		if(e.getSource() == information.getButtonStart()) { 
 			minimum_path = new Algorithm(matrixpanel.getGame_board());
 			this.begin();
+		}
+		
+		if(e.getSource() == information.getButtonReturn()) { 
+			new GameController();
 		}
 	}
 	

@@ -11,7 +11,8 @@ public class Information extends JPanel
 	private Matrix info;
 	private JButton button_start;
 	private JButton button_exit;
-
+	private JButton button_return;
+	
 	public Information()
 	{ 
 		this.info = null;
@@ -28,10 +29,13 @@ public class Information extends JPanel
 		this.setBackground(new Color(196,196,196));
 		this.button_start = new JButton("Comenzar");
 		this.button_exit = new JButton("Salir");
+		this.button_return = new JButton("Volver");
 		this.add(button_start);
 		this.add(button_exit);
+		this.add(button_return);
 		button_start.setBounds(45,330,100,20);
-		button_exit.setBounds(45,360,100,20);
+		button_return.setBounds(45,360,100,20);
+		button_exit.setBounds(45,390,100,20);
 	}
 	
 	public JButton getButtonExit()
@@ -44,9 +48,20 @@ public class Information extends JPanel
 		return this.button_start;
 	}
 	
+	public JButton getButtonReturn()
+	{
+		return this.button_return;
+	}
+	
+	
 	public void setButtonStart(JButton button_start)
 	{
 		this.button_start = button_start;
+	}
+	
+	public void setButtonReturn(JButton button_return)
+	{
+		this.button_return = button_return;
 	}
 	
 	public void setButtonExit(JButton button_exit)
