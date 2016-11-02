@@ -202,6 +202,22 @@ public void addActionListener() {
 			      							matrixpanel.getGame_board().setValue(x,y,7);
 			      							inicio = false;
 			      						}
+		      							if(anterior == 1)
+		      							{
+		      								matrixpanel.getGame_board().setValue(i,j,15); 
+		      								matrixpanel.getGame_board().setValue(x,y,7);
+		      							}
+		      							if(anterior == 3)
+		      							{
+		      								matrixpanel.getGame_board().setValue(i,j,16); 
+		      								matrixpanel.getGame_board().setValue(x,y,7);
+		      							}
+		      							if(anterior == 4)
+		      							{
+		      								matrixpanel.getGame_board().setValue(i,j,17); 
+		      								matrixpanel.getGame_board().setValue(x,y,7);
+		      							}
+		      							anterior = 1;
 		      						}
 		      						if((x > i) && (y == j)) { // CONDICIÓN: Si se produce un movimiento hacia abajo
 		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
@@ -213,6 +229,22 @@ public void addActionListener() {
 			      							matrixpanel.getGame_board().setValue(x,y,7);
 			      							inicio = false;
 			      						}
+		      							if(anterior == 2)
+		      							{
+		      								matrixpanel.getGame_board().setValue(i,j,15); 
+		      								matrixpanel.getGame_board().setValue(x,y,8);
+		      							}
+		      							if(anterior == 3)
+		      							{
+		      								matrixpanel.getGame_board().setValue(i,j,18); 
+		      								matrixpanel.getGame_board().setValue(x,y,8);
+		      							}
+		      							if(anterior == 4)
+		      							{
+		      								matrixpanel.getGame_board().setValue(i,j,19); 
+		      								matrixpanel.getGame_board().setValue(x,y,8);
+		      							}
+		      							anterior = 2;
 		      						}
 		      						if((x == i) && (y > j)) { // CONDICIÓN: Si se produce un movimiento hacia a la derecha
 		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
@@ -224,6 +256,22 @@ public void addActionListener() {
 			      							matrixpanel.getGame_board().setValue(x,y,7);
 			      							inicio = false;
 			      						}
+		      							if(anterior == 1)
+		      							{
+		      								matrixpanel.getGame_board().setValue(i,j,19); 
+		      								matrixpanel.getGame_board().setValue(x,y,9);
+		      							}
+		      							if(anterior == 2)
+		      							{
+		      								matrixpanel.getGame_board().setValue(i,j,17); 
+		      								matrixpanel.getGame_board().setValue(x,y,9);
+		      							}
+		      							if(anterior == 3)
+		      							{
+		      								matrixpanel.getGame_board().setValue(i,j,20); 
+		      								matrixpanel.getGame_board().setValue(x,y,9);
+		      							}
+		      							anterior = 3;
 		      						}
 		      						if((x == i) && (y < j)) { // CONDICIÓN: Si se produce un movimiento hacia a la izquierda
 		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
@@ -235,6 +283,22 @@ public void addActionListener() {
 			      							matrixpanel.getGame_board().setValue(x,y,7);
 			      							inicio = false;
 			      						}
+		      							if(anterior == 1)
+		      							{
+		      								matrixpanel.getGame_board().setValue(i,j,18); 
+		      								matrixpanel.getGame_board().setValue(x,y,10);
+		      							}
+		      							if(anterior == 2)
+		      							{
+		      								matrixpanel.getGame_board().setValue(i,j,16); 
+		      								matrixpanel.getGame_board().setValue(x,y,10);
+		      							}
+		      							if(anterior == 4)
+		      							{
+		      								matrixpanel.getGame_board().setValue(i,j,20); 
+		      								matrixpanel.getGame_board().setValue(x,y,10);
+		      							}
+		      							anterior = 4;
 		      						}
 		      						
 		      					}

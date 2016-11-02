@@ -159,6 +159,30 @@ public class MatrixPanel extends JPanel {
 				{
 					g.drawImage(new ImageIcon("res/images/Carretera/salidaizq.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
+				if ( game_board.getValue(i, j) == 15)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/vertical.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 16)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/arrizq.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 17)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/arrdcha.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 18)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/izqaba.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 19)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/abadcha.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 20)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/horiozontal.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
 			}
 		}
 	}
