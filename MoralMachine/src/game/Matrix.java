@@ -141,7 +141,8 @@ public class Matrix
 		this.obstaculos = (getM()*getN()*(o/100));
 	}
 	
-	public void setMalla(boolean malla){
+	public void setMalla(boolean malla)
+	{
 		this.malla = malla;
 	}
 	
@@ -150,15 +151,14 @@ public class Matrix
 		return nObs;
 	}
 	
-	public boolean getMalla(){
+	public boolean getMalla()
+	{
 		return malla;
 	}
-	
-	
-	
+
 	private int pos(int i, int j)
 	{
-		if ((i < 0) || (j < 0) || (i >= getM()) || (i >= getN()))
+		if ((i < 0) || (j < 0) || (i >= getM()) || (j >= getN()))
 		{
 			System.out.println("Acceso incorrecto al vector");
 			return -1;
@@ -177,7 +177,6 @@ public class Matrix
 	
 	public void setCarPos()
 	{
-		
 		this.matrix[pos(car.getxC(),car.getyC())] = 7;
 	}
 	
@@ -201,18 +200,19 @@ public class Matrix
 	
 	public void setBorde()
 	{
-		for(int j = 0; j < getN(); j = j+1*getN()-1)
+		for(int i = 0; i < getM(); i = i+(getM()-1))
 		{
-			for(int i = 0; i < getM(); i++)
+			for(int j = 0; j < getN(); j++)
 			{
 				this.matrix[pos(i,j)] = 2;
 			}
 		}
-		for(int j = 0; j < getN(); j = j+1*getN()-1)
+		
+		for(int j = 0; j < getN(); j = j+(getN()-1))
 		{
-			for(int i = 0; i < getM(); i++)
+			for(int i = 1; i < getM()-1; i++)
 			{
-				this.matrix[pos(j,i)] = 2;
+				this.matrix[pos(i,j)] = 2;
 			}
 		}
 	}
@@ -223,13 +223,13 @@ public class Matrix
 		{
 			rnd = new Random();
 			
-			conos[i].set_x(rnd.nextInt((getN()-2) - 1 + 1) + 1);
-			conos[i].set_y(rnd.nextInt((getM()-2) - 1 + 1) + 1);
+			conos[i].set_x(rnd.nextInt((getM()-2) - 1 + 1) + 1);
+			conos[i].set_y(rnd.nextInt((getN()-2) - 1 + 1) + 1);
 			
 			while(matrix[pos(conos[i].get_x(),conos[i].get_y())] != 0)
 			{
-				conos[i].set_x(rnd.nextInt((getN()-2) - 1 + 1) + 1);
-				conos[i].set_y(rnd.nextInt((getM()-2) - 1 + 1) + 1);
+				conos[i].set_x(rnd.nextInt((getM()-2) - 1 + 1) + 1);
+				conos[i].set_y(rnd.nextInt((getN()-2) - 1 + 1) + 1);
 			}
 			
 		}
@@ -240,15 +240,14 @@ public class Matrix
 	{
 		for(int i = 0; i < conos.length; i++)
 		{
-			int x = conos[i].get_y();
-			int y = conos[i].get_x();
+			int x = conos[i].get_x();
+			int y = conos[i].get_y();
 			matrix[pos(x,y)] = 3;
 		}
 	}
 	
 	public void createConos()
 	{
-		
 		for(int i = 0; i < conos.length; i++)
 		{
 			Obstaculo cono = new Obstaculo();
@@ -282,17 +281,15 @@ public class Matrix
 		{
 			Random rnd = new Random();
 			
-			pasajeros[i].setX(rnd.nextInt((getN()-2) - 1 + 1) + 1);
-			pasajeros[i].setY(rnd.nextInt((getM()-2) - 1 + 1) + 1);	
+			pasajeros[i].setX(rnd.nextInt((getM()-2) - 1 + 1) + 1);
+			pasajeros[i].setY(rnd.nextInt((getN()-2) - 1 + 1) + 1);	
 			
-			while(matrix[pos(pasajeros[i].getX(), pasajeros[i].getX())] != 0)
+			while(matrix[pos(pasajeros[i].getX(), pasajeros[i].getY())] != 0)
 			{
-				pasajeros[i].setX(rnd.nextInt((getN()-2) - 1 + 1) + 1);
 				pasajeros[i].setX(rnd.nextInt((getM()-2) - 1 + 1) + 1);
+				pasajeros[i].setY(rnd.nextInt((getN()-2) - 1 + 1) + 1);
 			}
 		}
-		
-		
 		printPasajeros();
 	}
 	
@@ -300,17 +297,14 @@ public class Matrix
 	{
 		for(int i = 0; i < pasajeros.length; i++)
 		{
-			
-			int x = pasajeros[i].getY();
-			int y = pasajeros[i].getX();
+			int x = pasajeros[i].getX();
+			int y = pasajeros[i].getY();
 			if(pasajeros[i].getId() == 4)
 				matrix[pos(x,y)] = 4;
 			else
 				matrix[pos(x,y)] = 5;
 		}
 	}
-	
-
 	
 	public void createObstaculos()
 	{
@@ -326,16 +320,14 @@ public class Matrix
 	{
 		int conos = 0;
 		  
-		for(int i = 0; i < getN(); i++)
+		for(int i = 0; i < getM(); i++)
 		{
-			for(int j = 0; j < getM(); j++)
+			for(int j = 0; j < getN(); j++)
 			{
-				
 				if (this.matrix[pos(i,j)] == 3)
 				{
 					conos++;
 				}
-				
 			}
 		}
 		
@@ -344,19 +336,16 @@ public class Matrix
 	
 	public int getChicas()
 	{
-		
-	  int chicas = 0;
+		int chicas = 0;
 	  
-		for(int i = 0; i < getN(); i++)
+		for(int i = 0; i < getM(); i++)
 		{
-			for(int j = 0; j < getM(); j++)
+			for(int j = 0; j < getN(); j++)
 			{
-				
 				if (this.matrix[pos(i,j)] == 5)
 				{
 					chicas++;
 				}
-				
 			}
 		}
 		
@@ -365,19 +354,17 @@ public class Matrix
 	
 	public int getChicos()
 	{
-		
-	  int chicos = 0;
+		int chicos = 0;
 	  
-		for(int i = 0; i < getN(); i++)
+		for(int i = 0; i < getM(); i++)
 		{
-			for(int j = 0; j < getM(); j++)
+			for(int j = 0; j < getN(); j++)
 			{
 				
 				if (this.matrix[pos(i,j)] == 4)
 				{
 					chicos++;
-				}
-				
+				}	
 			}
 		}
 		
@@ -398,6 +385,4 @@ public class Matrix
 	{
 		Pasajeros_ = pasajeros;
 	}
-	
-	
 }
