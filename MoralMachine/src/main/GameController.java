@@ -166,9 +166,8 @@ public void addActionListener() {
 
 			List list_solution = null; 
       		list_solution = minimum_path.beggining(); 
-      		
-      	
-      		
+      		boolean inicio = true;
+      		int anterior = 0;
 			int pasajeros = 0;
       		
 			
@@ -197,29 +196,45 @@ public void addActionListener() {
 		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
 		      							   pasajeros++;
 		      							}
-			      						matrixpanel.getGame_board().setValue(i,j,0); 
-		      							matrixpanel.getGame_board().setValue(x,y,7); 
+			      						if(inicio == true)
+			      						{
+			      							matrixpanel.getGame_board().setValue(i,j,11); 
+			      							matrixpanel.getGame_board().setValue(x,y,7);
+			      							inicio = false;
+			      						}
 		      						}
 		      						if((x > i) && (y == j)) { // CONDICIÓN: Si se produce un movimiento hacia abajo
 		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
 			      							   pasajeros++;
 			      							}
-			      						matrixpanel.getGame_board().setValue(i,j,0); 
-		      							matrixpanel.getGame_board().setValue(x,y,8); 
+			      						if(inicio == true)
+			      						{
+			      							matrixpanel.getGame_board().setValue(i,j,12); 
+			      							matrixpanel.getGame_board().setValue(x,y,7);
+			      							inicio = false;
+			      						}
 		      						}
 		      						if((x == i) && (y > j)) { // CONDICIÓN: Si se produce un movimiento hacia a la derecha
 		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
 			      							   pasajeros++;
 			      							}
-			      						matrixpanel.getGame_board().setValue(i,j,0); 
-		      							matrixpanel.getGame_board().setValue(x,y,9); 
+			      						if(inicio == true)
+			      						{
+			      							matrixpanel.getGame_board().setValue(i,j,13); 
+			      							matrixpanel.getGame_board().setValue(x,y,7);
+			      							inicio = false;
+			      						}
 		      						}
 		      						if((x == i) && (y < j)) { // CONDICIÓN: Si se produce un movimiento hacia a la izquierda
 		      							if((matrixpanel.getGame_board().getValue(x,y) == 4) || (matrixpanel.getGame_board().getValue(x,y) == 5)){
 			      							   pasajeros++;
 			      							}
-			      						matrixpanel.getGame_board().setValue(i,j,0); 
-		      							matrixpanel.getGame_board().setValue(x,y,10); 
+			      						if(inicio == true)
+			      						{
+			      							matrixpanel.getGame_board().setValue(i,j,14); 
+			      							matrixpanel.getGame_board().setValue(x,y,7);
+			      							inicio = false;
+			      						}
 		      						}
 		      						
 		      					}

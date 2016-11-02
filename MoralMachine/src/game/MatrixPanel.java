@@ -143,6 +143,22 @@ public class MatrixPanel extends JPanel {
 				{
 					g.drawImage(new ImageIcon("res/images/Personajes/cocheizquierda.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
+				if ( game_board.getValue(i, j) == 11)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/salidaarr").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 12)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/salidaaba.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 13)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/salidader.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 14)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/salidaizq.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
 			}
 		}
 	}
@@ -194,6 +210,22 @@ public class MatrixPanel extends JPanel {
 				if ( game_board.getValue(i, j) == 10)
 				{
 					g.drawImage(new ImageIcon("res/images/Personajes/mcocheizquierda.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 11)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/msalidaarr.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 12)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/msalidaaba.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 13)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/msalidader.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 14)
+				{
+					g.drawImage(new ImageIcon("res/images/Carretera/msalidaizq.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
 			}
 		}
