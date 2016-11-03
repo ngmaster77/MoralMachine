@@ -227,7 +227,7 @@ public void addActionListener() {
 			      						if(inicio == true)
 			      						{
 			      							matrixpanel.getGame_board().setValue(i,j,12); 
-			      							matrixpanel.getGame_board().setValue(x,y,7);
+			      							matrixpanel.getGame_board().setValue(x,y,8);
 			      							inicio = false;
 			      						}
 		      							if(anterior == 2)
@@ -255,7 +255,7 @@ public void addActionListener() {
 			      						if(inicio == true)
 			      						{
 			      							matrixpanel.getGame_board().setValue(i,j,13); 
-			      							matrixpanel.getGame_board().setValue(x,y,7);
+			      							matrixpanel.getGame_board().setValue(x,y,9);
 			      							inicio = false;
 			      						}
 		      							if(anterior == 1)
@@ -284,7 +284,7 @@ public void addActionListener() {
 			      						if(inicio == true)
 			      						{
 			      							matrixpanel.getGame_board().setValue(i,j,14); 
-			      							matrixpanel.getGame_board().setValue(x,y,7);
+			      							matrixpanel.getGame_board().setValue(x,y,10);
 			      							inicio = false;
 			      						}
 		      							if(anterior == 1)
@@ -323,18 +323,25 @@ public void addActionListener() {
 	      						if(anterior == 1)
 	      						{
 	      							matrixpanel.getGame_board().setValue(i,j,15); 
+      								matrixpanel.getGame_board().setValue(matrixpanel.getGame_board().getMeta().getX(),matrixpanel.getGame_board().getMeta().getY(),7);
+
 	      						}
       							if(anterior == 2)
       							{
       								matrixpanel.getGame_board().setValue(i,j,15); 
+      								matrixpanel.getGame_board().setValue(matrixpanel.getGame_board().getMeta().getX(),matrixpanel.getGame_board().getMeta().getY(),8);
+
       							}
       							if(anterior == 3)
       							{
       								matrixpanel.getGame_board().setValue(i,j,20); 
+      								matrixpanel.getGame_board().setValue(matrixpanel.getGame_board().getMeta().getX(),matrixpanel.getGame_board().getMeta().getY(),9);
+
       							}
       							if(anterior == 4)
       							{
       								matrixpanel.getGame_board().setValue(i,j,20); 
+      								matrixpanel.getGame_board().setValue(matrixpanel.getGame_board().getMeta().getX(),matrixpanel.getGame_board().getMeta().getY(),10);
       							}	 
 								matrixpanel.repaint(); 
 	      					}

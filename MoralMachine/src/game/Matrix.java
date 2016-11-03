@@ -202,7 +202,7 @@ public class Matrix
 			car.moveLeft();
 		if(m == 4)
 			car.moveRight();
-		setCarPos();
+		//setCarPos();
 	}
 	
 	public void setBorde()
