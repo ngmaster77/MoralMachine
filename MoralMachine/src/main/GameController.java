@@ -66,6 +66,29 @@ public GameController() {
 		
 	}
 	
+	
+	public void obstaculos_manual(){
+		
+		String posCoche = JOptionPane.showInputDialog(null, "Introduzca posicion del cono (Ej: 4,5)");
+		String[] posC = posCoche.split(",");
+		int xC = Integer.parseInt(posC[0]);
+		int yC = Integer.parseInt(posC[1]);
+		
+		matrixpanel.getGame_board().setValue(xC, yC, 3);
+		matrixpanel.repaint();
+	}
+	
+	public void quitar_manual(){
+		
+		String posCoche = JOptionPane.showInputDialog(null, "Introduzca posicion del cono (Ej: 4,5)");
+		String[] posC = posCoche.split(",");
+		int xC = Integer.parseInt(posC[0]);
+		int yC = Integer.parseInt(posC[1]);
+		
+		matrixpanel.getGame_board().setValue(xC, yC, 1);
+		matrixpanel.repaint();
+	}
+	
 	private void initialize_matrix_panel() { 
 		
 		int a = Integer.parseInt(backgroundstartpanel.getStartpanel().getColumnas().getText());
@@ -89,6 +112,8 @@ public void addActionListener() {
 		information.getButtonExit().addActionListener(this);
 		information.getButtonStart().addActionListener(this);
 		information.getButtonReturn().addActionListener(this);
+		information.getButtonConos().addActionListener(this);
+		information.getButtonConos2().addActionListener(this);
 	}
 	
 	@Override
@@ -118,7 +143,17 @@ public void addActionListener() {
 		if(e.getSource() == information.getButtonReturn()) { 
 			new GameController();
 		}
+		
+		if(e.getSource() == information.getButtonConos()) { 
+			obstaculos_manual();
+		}
+	
+		if(e.getSource() == information.getButtonConos2()) { 
+			quitar_manual();
+		}
 	}
+		
+	
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {}

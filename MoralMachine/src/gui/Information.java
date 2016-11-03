@@ -12,6 +12,8 @@ public class Information extends JPanel
 	private JButton button_start;
 	private JButton button_exit;
 	private JButton button_return;
+	private JButton button_conos;
+	private JButton button_conos2;
 	
 	public Information()
 	{ 
@@ -29,13 +31,19 @@ public class Information extends JPanel
 		this.setBackground(new Color(196,196,196));
 		this.button_start = new JButton("Comenzar");
 		this.button_exit = new JButton("Salir");
+		this.button_conos = new JButton("Insertar obs");
 		this.button_return = new JButton("Volver");
+		this.button_conos2 = new JButton("Quitar obs");
 		this.add(button_start);
 		this.add(button_exit);
 		this.add(button_return);
+		this.add(button_conos);
+		this.add(button_conos2);
 		button_start.setBounds(45,330,100,20);
 		button_return.setBounds(45,360,100,20);
 		button_exit.setBounds(45,390,100,20);
+		button_conos.setBounds(45,420,100,20);
+		button_conos2.setBounds(45,420,100,20);
 	}
 	
 	public JButton getButtonExit()
@@ -53,6 +61,16 @@ public class Information extends JPanel
 		return this.button_return;
 	}
 	
+	public JButton getButtonConos()
+	{
+		return this.button_conos;
+	}
+	
+
+	public JButton getButtonConos2()
+	{
+		return this.button_conos2;
+	}
 	
 	public void setButtonStart(JButton button_start)
 	{
@@ -68,6 +86,17 @@ public class Information extends JPanel
 	{
 		this.button_exit = button_exit;
 	}
+	
+	public void setButtonConos(JButton button_conos)
+	{
+		this.button_conos = button_conos;
+	}
+	
+	public void setButtonConos2(JButton button_conos2)
+	{
+		this.button_conos2 = button_conos2;
+	}
+
 	
 	public void setMatrixInfo(Matrix info)
 	{
