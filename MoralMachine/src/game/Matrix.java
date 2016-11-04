@@ -223,6 +223,14 @@ public class Matrix
 			}
 		}
 	}
+	public void setCarX(int x)
+	{
+		this.car.setxC(x);
+	}
+	public void setCarY(int y)
+	{
+		this.car.setxC(y);
+	}
 	public Meta getMeta()
 	{
 		return fin;

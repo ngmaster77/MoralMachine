@@ -183,6 +183,10 @@ public class MatrixPanel extends JPanel {
 				{
 					g.drawImage(new ImageIcon("res/images/Carretera/horiozontal.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
+				if ( game_board.getValue(i, j) == 21)
+				{
+					g.drawImage(new ImageIcon("res/images/Obstaculos/copa.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
 			}
 		}
 	}
@@ -274,6 +278,10 @@ public class MatrixPanel extends JPanel {
 				if ( game_board.getValue(i, j) == 20)
 				{
 					g.drawImage(new ImageIcon("res/images/Carretera/mhorizontal.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
+				}
+				if ( game_board.getValue(i, j) == 21)
+				{
+					g.drawImage(new ImageIcon("res/images/Obstaculos/mcopa.png").getImage(),j * IMAGESIZE, i * IMAGESIZE2, IMAGESIZE, IMAGESIZE2,this);
 				}
 			}
 		}

@@ -344,7 +344,8 @@ public void addActionListener() {
 		      					}
 		      				}
 		      			}
-		      			
+      					matrixpanel.getGame_board().setCarX(matrixpanel.getGame_board().getMeta().getX());
+      					matrixpanel.getGame_board().setCarY(matrixpanel.getGame_board().getMeta().getY());
 		      			matrixpanel.repaint(); 
 	
 		      			try { 
@@ -358,25 +359,25 @@ public void addActionListener() {
 	      						if(anterior == 1)
 	      						{
 	      							matrixpanel.getGame_board().setValue(i,j,15); 
-      								matrixpanel.getGame_board().setValue(matrixpanel.getGame_board().getMeta().getX(),matrixpanel.getGame_board().getMeta().getY(),7);
+      								matrixpanel.getGame_board().setValue(matrixpanel.getGame_board().getMeta().getX(),matrixpanel.getGame_board().getMeta().getY(),21);
 
 	      						}
       							if(anterior == 2)
       							{
       								matrixpanel.getGame_board().setValue(i,j,15); 
-      								matrixpanel.getGame_board().setValue(matrixpanel.getGame_board().getMeta().getX(),matrixpanel.getGame_board().getMeta().getY(),8);
+      								matrixpanel.getGame_board().setValue(matrixpanel.getGame_board().getMeta().getX(),matrixpanel.getGame_board().getMeta().getY(),21);
 
       							}
       							if(anterior == 3)
       							{
       								matrixpanel.getGame_board().setValue(i,j,20); 
-      								matrixpanel.getGame_board().setValue(matrixpanel.getGame_board().getMeta().getX(),matrixpanel.getGame_board().getMeta().getY(),9);
+      								matrixpanel.getGame_board().setValue(matrixpanel.getGame_board().getMeta().getX(),matrixpanel.getGame_board().getMeta().getY(),21);
 
       							}
       							if(anterior == 4)
       							{
       								matrixpanel.getGame_board().setValue(i,j,20); 
-      								matrixpanel.getGame_board().setValue(matrixpanel.getGame_board().getMeta().getX(),matrixpanel.getGame_board().getMeta().getY(),10);
+      								matrixpanel.getGame_board().setValue(matrixpanel.getGame_board().getMeta().getX(),matrixpanel.getGame_board().getMeta().getY(),21);
       							}	 
 								matrixpanel.repaint(); 
 	      					}
