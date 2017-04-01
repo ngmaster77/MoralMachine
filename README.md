@@ -1,11 +1,11 @@
-#Inteligencia Artificial
-##Alejandro Arzola García
-##Néstor García Moreno
-##Samuel Ramos Barroso
+# Inteligencia Artificial
+## Alejandro Arzola García
+## Néstor García Moreno
+## Samuel Ramos Barroso
 
-####Lenguaje: Java
-####Entorno: Eclipse
-####Para ejecutar
+#### Lenguaje: Java
+#### Entorno: Eclipse
+#### Para ejecutar
 
 ```java
 
